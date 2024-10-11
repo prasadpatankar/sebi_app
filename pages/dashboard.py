@@ -6,9 +6,6 @@ import openpyxl
 
 st.title("Database Table Viewer")
 
-# Print current working directory
-st.write(f"Current working directory: {os.getcwd()}")
-
 # Correct file path
 file_path = r"files/database_home.xlsx"
 
