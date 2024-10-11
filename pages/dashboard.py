@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 import os
 import base64
+import openpyxl
 
 st.title("Database Table Viewer")
 
 # Load the Excel file (use openpyxl engine if encountering errors)
 try:
-    db_home = pd.read_excel("sebi_app/files/database_home.xlsx")
+    db_home = pd.read_excel("sebi_app/files/database_home.xlsx", engine="openpyxl")
     #https://github.com/prasadpatankar/sebi_app/blob/main/files/database_home.xlsx
 
 except FileNotFoundError:
