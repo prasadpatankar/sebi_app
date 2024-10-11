@@ -8,7 +8,7 @@ st.title("Database Table Viewer")
 
 # Load the Excel file (use openpyxl engine if encountering errors)
 try:
-    db_home = pd.read_excel("sebi_app/files/database_home.xlsx", engine="openpyxl")
+    db_home = pd.read_excel(r"sebi_app/files/database_home.xlsx", engine="openpyxl")
     #https://github.com/prasadpatankar/sebi_app/blob/main/files/database_home.xlsx
 
 except FileNotFoundError:
@@ -34,7 +34,7 @@ if table_names.size > 0:  # Check if any tables exist for the selected category
     # --- Get Table ID ---
     table_id = filtered_tables[filtered_tables["Name"] == selected_table]["Table"].iloc[0]
     filename = f"{table_id}.csv"
-    filepath = os.path.join("sebi_app/files", filename)
+    filepath = os.path.join(r"sebi_app/files", filename)
 
     # --- Display Table ---
     try:
