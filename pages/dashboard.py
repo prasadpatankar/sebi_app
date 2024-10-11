@@ -10,9 +10,8 @@ st.title("Database Table Viewer")
 st.write(f"Current working directory: {os.getcwd()}")
 
 # Correct file path
-file_path = "files/database_home.xlsx"
-st.write(f"Checking if file exists at: {file_path}")
-st.write(f"File exists: {os.path.exists(file_path)}")
+file_path = r"files/database_home.xlsx"
+
 
 # Load the Excel file (use openpyxl engine if encountering errors)
 try:
