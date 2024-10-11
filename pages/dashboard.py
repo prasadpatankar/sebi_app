@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 import base64
-import streamlit as st
-import pandas as pd
-import os
-import base64
 import openpyxl
 
 st.title("Database Table Viewer")
@@ -13,14 +9,16 @@ st.title("Database Table Viewer")
 # Print current working directory
 st.write(f"Current working directory: {os.getcwd()}")
 
-# Check if file exists
-file_path = r"/files/database_home.xlsx"
+# Correct file path
+file_path = "files/database_home.xlsx"
 st.write(f"Checking if file exists at: {file_path}")
 st.write(f"File exists: {os.path.exists(file_path)}")
 
 # Load the Excel file (use openpyxl engine if encountering errors)
 try:
     db_home = pd.read_excel(file_path, engine="openpyxl")
+    st.success("File loaded successfully!")
+    st.write(db_home.head())  # Display the first few rows of the dataframe
 except FileNotFoundError:
     st.error(f"Database file ({file_path}) not found. Please check the path.")
     st.stop()  # Stop execution if the file is not found
@@ -29,7 +27,6 @@ except Exception as e:
     st.stop()
 
 # Rest of your code...
-
 
 # --- Category Dropdown ---
 categories = db_home["Category"].unique()
