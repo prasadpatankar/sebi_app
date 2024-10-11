@@ -16,8 +16,6 @@ file_path = r"files/database_home.xlsx"
 # Load the Excel file (use openpyxl engine if encountering errors)
 try:
     db_home = pd.read_excel(file_path, engine="openpyxl")
-    st.success("File loaded successfully!")
-    st.write(db_home.head())  # Display the first few rows of the dataframe
 except FileNotFoundError:
     st.error(f"Database file ({file_path}) not found. Please check the path.")
     st.stop()  # Stop execution if the file is not found
@@ -41,7 +39,7 @@ if table_names.size > 0:  # Check if any tables exist for the selected category
     # --- Get Table ID ---
     table_id = filtered_tables[filtered_tables["Name"] == selected_table]["Table"].iloc[0]
     filename = f"{table_id}.csv"
-    filepath = os.path.join(r"sebi_app/files", filename)
+    filepath = os.path.join(r"files", filename)
 
     # --- Display Table ---
     try:
