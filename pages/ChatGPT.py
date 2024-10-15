@@ -21,9 +21,6 @@ def get_gemini_response(question: str) -> str:
     # Initialize the Gemini model
     model = genai.GenerativeModel('gemini-1.5-flash')
 
-    response = model.generate_content("What is the future of AI in one sentence?")
-    st.write(response.text)
-
     # Generate content based on the prompt and question
     response = model.generate_content(question)
 
