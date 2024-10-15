@@ -7,11 +7,6 @@ import os
 my_api_key = "AIzaSyDE7hhHqhn_0KgVzJxh9nyhmlhjZVSuCOA"
 genai.configure(api_key=my_api_key)#genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-for m in genai.list_models():
-  if 'generateContent' in m.supported_generation_methods:
-    st.write(m.name)
-
-
 def get_gemini_response(question: str) -> str:
     """
     Load Google Gemini model and generate a response to the given question.
