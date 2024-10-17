@@ -11,3 +11,4 @@ google-auth==2.35.0
 google-auth-httplib2==0.2.0
 google-generativeai==0.8.3
 googleapis-common-protos==1.65.0
+plotly==5.19.0
