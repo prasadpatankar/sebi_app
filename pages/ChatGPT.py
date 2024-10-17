@@ -3,9 +3,20 @@ import google.generativeai as genai
 import streamlit as st
 import os
 
+#proxy = "http://10.201.6.100:1080"
+#os.environ['http_proxy'] = proxy
+#os.environ['HTTP_PROXY'] = proxy
+#os.environ['https_proxy'] = proxy
+#os.environ['HTTPS_PROXY'] = proxy
+
+my_api_key = os.getenv("GOOGLE_API_KEY")
+#st.write(f"API Key from environment variable: {api_key}")
+
 # Configure Gemini API key
-my_api_key = "AIzaSyDE7hhHqhn_0KgVzJxh9nyhmlhjZVSuCOA"
-genai.configure(api_key=my_api_key)#genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+# my_api_key = "AIzaSyDE7hhHqhn_0KgVzJxh9nyhmlhjZVSuCOA"
+genai.configure(api_key=my_api_key)
+
+#genai.configure(api_key=os.getenv("D:\Codeathon\streamlit_app\.env\GOOGLE_API_KEY"))
 
 def get_gemini_response(question: str) -> str:
     """

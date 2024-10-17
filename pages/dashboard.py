@@ -1,75 +1,48 @@
 import streamlit as st
 import pandas as pd
-import os
-import openpyxl  # Make sure you have openpyxl installed
-import base64
-import numpy as np
+import plotly.express as px
+import plotly.graph_objs as go
+  
+# Main content
+st.title('Mutual Fund Section')
 
-st.title("Database Table Viewer")
+
+# Create a 2x2 grid layout for visualizations
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
 
 # Correct file path
-file_path = r"files/database_home.xlsx"
+file_path_mf2 = r"files/MF_m_02.csv"
+df = pd.read_csv(file_path_mf2).iloc[-12:]
+df['Net_AUM'] = df['Net_AUM'].str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
+df['No_Folios'] = df['No_Folios'].str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e7
 
+# Visualization 1: Bar Chart for Number of Orders by Quarter and Type
+with col1:
+    #st.subheader('Number of MF Folios (in Crore)')
+    fig_folios = px.bar(
+        df[['Month','No_Folios']],
+        x='Month',
+        y='No_Folios',
+        text_auto='.2s',
+        #color='TYPE',
+        #barmode='group',
+        title='Number of MF Folios (in Crore)'
+    )
+    # Add text annotations for starting and ending values (adjust position and formatting as needed)
+    st.plotly_chart(fig_folios)
 
-# Load the Excel file (use openpyxl engine if encountering errors)
-try:
-    db_home = pd.read_excel(file_path, engine="openpyxl")
-except FileNotFoundError:
-    st.error(f"Database file ({file_path}) not found. Please check the path.")
-    st.stop()  # Stop execution if the file is not found
-except Exception as e:
-    st.error(f"An error occurred loading the database file: {e}")
-    st.stop()
+# Visualization 2: Penalty Applied Per Quarter
+with col2:
+    #st.subheader('MF AUM (in Rs Lakh Crore)')
+    fig_AUM = px.bar(
+        df[['Month','Net_AUM']],
+        x='Month',
+        y='Net_AUM',
+        text_auto='.2s',
+        #color='TYPE',
+        #barmode='group',
+        title='MF AUM (in Rs Lakh Crore)'
 
-
-# --- Category Dropdown ---
-categories = db_home["Category"].unique()
-selected_category = st.selectbox("Select Category", categories)
-
-# --- Table Name Dropdown (filtered by category) ---
-filtered_tables = db_home[db_home["Category"] == selected_category]
-table_names = filtered_tables["Name"].unique()
-
-if table_names.size > 0:  # Check if any tables exist for the selected category
-    selected_table = st.selectbox("Select Table Name", table_names)
-
-    # --- Get Table ID ---
-    table_id = filtered_tables[filtered_tables["Name"] == selected_table]["Table"].iloc[0]
-    filename = f"{table_id}.csv"
-    filepath = os.path.join("files", filename)
-
-    # --- Display Table ---
-    try:
-        df = pd.read_csv(filepath, index_col=0)  # Read the CSV
-        df = df.reset_index()
-        for x in df.columns:
-            if x=="Upload_Date":
-                df = df.drop(x, axis=1)
-            if x=="rank":
-                df = df.drop(x, axis=1)  
-        df = df.replace(np.nan,"")
-        # --- Download button ---
-        csv = df.to_csv(index=False) # Convert DataFrame to CSV string
-        b64 = base64.b64encode(csv.encode()).decode()  # Encode as base64
-        href = f'<a href="data:file/csv;base64,{b64}" download="{filename}">Download CSV Data</a>'
-        st.markdown(href, unsafe_allow_html=True)
-
-        # --- Display DataFrame as HTML table with styling ---
-        st.markdown(f"<center><h3>{selected_table}</h3></center>", unsafe_allow_html=True) # Centered heading
-        st.markdown('<div style="overflow-x:auto;">', unsafe_allow_html=True)  # For horizontal scroll
-        styled_table = df.iloc[-11:].style.set_table_styles([
-            {'selector': 'th', 'props': [('text-align', 'center')]},  # Center align headers
-            {'selector': 'td:nth-child(n+2)', 'props': [('text-align', 'right')]}  # Right align numeric columns
-        ]).to_html()
-        st.write(styled_table, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)  # Closing div for scroll
-
-
-    except FileNotFoundError:
-        st.error(f"File {filename} not found.")
-
-    except Exception as e:
-        st.error(f"An error occurred reading or displaying {filename}: {e}")
-
-else:
-    st.warning("No tables found for the selected category.")
+    )
+    st.plotly_chart(fig_AUM)
