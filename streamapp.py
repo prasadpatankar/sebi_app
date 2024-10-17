@@ -3,15 +3,13 @@ from streamlit_option_menu import option_menu
 import os
 import google.generativeai as genai
 
-
 # Define page titles and corresponding file paths
 page_titles = {
-    "Dashboard": "pageone.py",
-    "Merge PDFs": "pagetwo.py",
-    "Database": "dashboard.py",
-    "ChatGPT": "ChatGPT.py",
-  }
-
+"Dashboard": "dashboard.py",
+"Database": "database.py",
+"ChatGPT": "ChatGPT.py",
+"Utilities": "filterdf.py",
+}
 
 # Function to load and display a page based on the selected title
 def load_page(page_title):
@@ -29,7 +27,7 @@ def main():
     # Set page configuration
     st.set_page_config(
         page_title="Welcome to SEBI Dashboards & Database",
-        page_icon="💬",
+        page_icon="📈",
         layout= "wide",
         initial_sidebar_state="collapsed"
     )
@@ -41,8 +39,9 @@ def main():
     selected_page = option_menu(
         menu_title="",
         options=list(page_titles.keys()),
-        icons=["home", "info-circle", "envelope", "cart-plus"],
-        default_index=1,
+        icons=["speedometer2", "database", "robot", "cart-plus"],
+
+        default_index=0,
         orientation="horizontal",
         styles={
             "container": {"padding": "5px"},
