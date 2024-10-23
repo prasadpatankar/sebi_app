@@ -49,7 +49,8 @@ def generate_color_codes(elements):
 def main():
     st.set_page_config(layout="wide")
     st.title('Market Returns Comparison')
-    df = pd.read_csv('market_data.csv')
+    file_path_indices = r"files/market_data.csv"
+    df = pd.read_csv(file_path_indices)
     df['Month'] = pd.to_datetime(df['Month'], format="%d-%m-%Y")
     assets_list = list(df.columns)[1:]
     #df = create_dummy_data()
