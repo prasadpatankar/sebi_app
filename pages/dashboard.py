@@ -39,6 +39,7 @@ def normalize_data(df):
     return normalized_df
 
 def generate_color_codes(elements):
+  import random
   colors = {}
   for element in elements:
     # Generate a random hexadecimal color code
