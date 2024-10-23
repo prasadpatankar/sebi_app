@@ -41,7 +41,7 @@ def generate_color_codes(elements):
   colors = {}
   for element in elements:
     # Generate a random hexadecimal color code
-    color = f"#{np.random.randint(0, 0xFFFFFF):06x}"
+    color = f"#{random.randint(0, 0xFFFFFF):06x}"
     colors[element] = color
   return colors
 
