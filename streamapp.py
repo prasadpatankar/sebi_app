@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import os
 import google.generativeai as genai
+import random
 
 # Define page titles and corresponding file paths
 page_titles = {
