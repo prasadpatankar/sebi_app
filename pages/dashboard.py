@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import numpy as np
 import plotly.express as px
+import random
 
 
 def create_dummy_data():
