@@ -47,7 +47,6 @@ def generate_color_codes(elements):
   return colors
 
 def main():
-    st.set_page_config(layout="wide")
     st.title('Market Returns Comparison')
     file_path_indices = r"files/market_data.csv"
     df = pd.read_csv(file_path_indices)
