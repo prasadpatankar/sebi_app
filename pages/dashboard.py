@@ -6,25 +6,6 @@ import numpy as np
 import plotly.express as px
 import random
 
-
-def create_dummy_data():
-    end_date = datetime.now().replace(day=1) - timedelta(days=1)
-    dates = pd.date_range(end=end_date, periods=72, freq='M')
-    
-    np.random.seed(42)
-    nifty = np.random.normal(1, 0.02, 72).cumprod() * 8000
-    bonds = np.random.normal(1, 0.01, 72).cumprod() * 6000
-    gold = np.random.normal(1, 0.015, 72).cumprod() * 5000
-    silver = np.random.normal(1, 0.025, 72).cumprod() * 4000
-    
-    return pd.DataFrame({
-        'Month': dates,
-        'Nifty Index': nifty.round(2),
-        'Government Bond Index': bonds.round(2),
-        'Gold': gold.round(2),
-        'Silver': silver.round(2)
-    })
-
 def calculate_cagr(first_value, last_value, num_years):
     """Calculate CAGR given first value, last value and number of years"""
     if first_value <= 0 or last_value <= 0:
@@ -56,11 +37,10 @@ assets_list = list(df.columns)[1:]
 #df = create_dummy_data()
 end_date = df['Month'].max()
 
-col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
-
 period_options = ["3 Months", "6 Months", "9 Months", "1 Year", "5 Years", "10 Years", "15 Years", "20 Years", "Custom"]
 selected_period = st.radio("Select Period", period_options, horizontal=True)
 
+col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
 if selected_period == "Custom":
     with col2:
         start_date = st.date_input(
