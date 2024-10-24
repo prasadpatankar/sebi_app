@@ -2,14 +2,14 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import os
 import google.generativeai as genai
-import random
 
 # Define page titles and corresponding file paths
 page_titles = {
 "Dashboard": "dashboard.py",
 "Database": "database.py",
+"Filter Data": "filterdf.py",
 "ChatGPT": "ChatGPT.py",
-"Utilities": "filterdf.py",
+"Utilities": "pagetwo.py",
 }
 
 # Function to load and display a page based on the selected title
@@ -40,7 +40,7 @@ def main():
     selected_page = option_menu(
         menu_title="",
         options=list(page_titles.keys()),
-        icons=["speedometer2", "database", "robot", "cart-plus"],
+        icons=["speedometer2", "database", "wrench", "robot", "cart-plus"],
 
         default_index=0,
         orientation="horizontal",
