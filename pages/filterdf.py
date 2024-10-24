@@ -19,6 +19,7 @@ except Exception as e:
     st.error(f"An error occurred loading the database file: {e}")
     st.stop()
 
+st.title("DataFrame Filtering with Auto-Prompt Text Boxes")
 
 # --- Category Dropdown ---
 categories = db_home["Category"].unique()
@@ -46,7 +47,6 @@ if table_names.size > 0:  # Check if any tables exist for the selected category
                 df = df.drop(x, axis=1)  
         data = df.replace(np.nan,"")
 
-        st.title("DataFrame Filtering with Auto-Prompt Text Boxes")
         categorical_cols = []
         for col in data.columns:
             # Convert to string and replace NaN with empty string for accurate counting
