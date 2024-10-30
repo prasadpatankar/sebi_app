@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 # Define page titles and corresponding file paths
 page_titles = {
-"Dashboard": "dashboard.py",
+"Dashboard": "mydashboard.py",
 "Database": "database.py",
 "Filter Data": "filterdf.py",
 "ChatGPT": "ChatGPT.py",
@@ -17,7 +17,10 @@ def load_page(page_title):
     if page_title in page_titles:
         file_path = os.path.join("pages", page_titles[page_title])
         if os.path.exists(file_path):
-            exec(open(file_path).read())
+            try:
+                exec(open(file_path, encoding='utf-8').read())
+            except UnicodeDecodeError as e:
+                st.error(f"Error loading page '{page_title}': {str(e)}")
         else:
             st.error(f"Page '{page_title}' not found.")
     else:
