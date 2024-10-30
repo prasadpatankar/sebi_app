@@ -288,7 +288,7 @@ if True:
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         
         st.plotly_chart(fig, use_container_width=True)
-        
+        st.write("Notes: data updated till {end_date}")
         with st.expander("View & Download Data"):
             st.dataframe(normalized_df.round(2))
     
@@ -356,7 +356,7 @@ if True:
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         
         st.plotly_chart(fig, use_container_width=True)
-            
+        st.write("Notes: data updated till {end_date}")   
         with st.expander("View &download data "):
             st.dataframe(cagr_data)
 
@@ -373,6 +373,7 @@ param2 = st.radio('Select Currency', param2_options, index=1)
 file_path_fpi = r"files/dash_fpi.csv"
 df1 = pd.read_csv(file_path_fpi)[:-1]
 df1['Month1'] = pd.to_datetime(df1["Month"])
+last_date = df1['Month1'].max()
 df1['Month'] = df1['Month1']  + MonthEnd(0)
 df1= df1.drop("Month1", axis=1)
 all_fpi_cols = list(df1.columns)[1:]
@@ -439,7 +440,7 @@ with col10:
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig4, use_container_width=True)
-
+    st.write("Notes: data updated till {last_date}")
     with st.expander("View &download data "):
         st.dataframe(df2)
 
@@ -487,7 +488,7 @@ with col11:
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig5, use_container_width=True)
-
+    st.write("Notes: data updated till {last_date}")
     with st.expander("View &download data "):
         st.dataframe(df2)
 
@@ -544,7 +545,6 @@ with col8:
       xaxis_title="",
       #yaxis_title="Amount"
   )
-
   st.plotly_chart(fig_folios)
 
 # Visualization 1: Bar Chart for Number of Orders by Quarter and Type
@@ -587,6 +587,5 @@ with col9:
       xaxis_title="",
       #yaxis_title="Amount"
   )
-
   st.plotly_chart(fig_AUM)
 
