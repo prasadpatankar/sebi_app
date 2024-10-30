@@ -288,7 +288,7 @@ if True:
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         
         st.plotly_chart(fig, use_container_width=True)
-        st.write(f"Notes: data updated till {end_date}")
+        st.write(f"Notes: data updated till {end_date.format("%B %d, %Y")}")
         with st.expander("View & Download Data"):
             st.dataframe(normalized_df.round(2))
     
