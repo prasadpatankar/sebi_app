@@ -288,7 +288,7 @@ if True:
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         
         st.plotly_chart(fig, use_container_width=True)
-        st.write("Notes: data updated till {end_date}")
+        st.write(f"Notes: data updated till {end_date}")
         with st.expander("View & Download Data"):
             st.dataframe(normalized_df.round(2))
     
@@ -356,7 +356,7 @@ if True:
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         
         st.plotly_chart(fig, use_container_width=True)
-        st.write("Notes: data updated till {end_date}")   
+        st.write(f"Notes: data updated till {end_date}")   
         with st.expander("View &download data "):
             st.dataframe(cagr_data)
 
@@ -440,7 +440,7 @@ with col10:
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig4, use_container_width=True)
-    st.write("Notes: data updated till {last_date}")
+    st.write(f"Notes: data updated till {last_date}")
     with st.expander("View &download data "):
         st.dataframe(df2)
 
@@ -488,7 +488,7 @@ with col11:
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig5, use_container_width=True)
-    st.write("Notes: data updated till {last_date}")
+    st.write(f"Notes: data updated till {last_date}")
     with st.expander("View &download data "):
         st.dataframe(df2)
 
