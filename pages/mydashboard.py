@@ -422,7 +422,7 @@ with col10:
             'text': f'Trends in FPI Investment- Equity\n {text2}',
             'y': 0.95,
             'x': 0.5,
-            'xanchor': 'right',
+            'xanchor': 'left',
             'yanchor': 'top',
             'font': dict(size=20)
         },
