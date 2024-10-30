@@ -419,7 +419,7 @@ with col10:
         ))
     fig4.update_layout(
         title={
-            'text': f'Trends in FPI Investment Equity {text2}',
+            'text': f'Trends in FPI Investment- Equity\n {text2}',
             'y': 0.95,
             'x': 0.5,
             'xanchor': 'right',
@@ -467,7 +467,7 @@ with col11:
         ))
     fig5.update_layout(
         title={
-            'text': f'Trends in FPI Investment Debt {text2}',
+            'text': f'Trends in FPI Investment- Debt\n {text2}',
             'y': 0.95,
             'x': 0.5,
             'xanchor': 'right',
