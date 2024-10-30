@@ -379,6 +379,11 @@ all_fpi_cols = list(df1.columns)[1:]
 df1['Financial Year'] = df1['Month'].apply(to_financial_year)            
 df1['Calendar Year'] = df1['Month'].dt.year 
 
+text2 = None
+if param2=="USD":
+    text2 = "(Amount in USD Million)"
+else:
+    text2 = "(Amount in Rupees Crore)"
 df2= pd.DataFrame()
 # Filter DataFrame based on parameters
 if param1 == 'Month':
@@ -414,7 +419,7 @@ with col10:
         ))
     fig4.update_layout(
         title={
-            'text': f'Trends in FPI Investment Equity',
+            'text': f'Trends in FPI Investment Equity {text2}',
             'y': 0.95,
             'x': 0.5,
             'xanchor': 'right',
@@ -462,7 +467,7 @@ with col11:
         ))
     fig5.update_layout(
         title={
-            'text': f'Trends in FPI Investment Debt',
+            'text': f'Trends in FPI Investment Debt {text2}',
             'y': 0.95,
             'x': 0.5,
             'xanchor': 'right',
