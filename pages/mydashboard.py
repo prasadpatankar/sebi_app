@@ -99,7 +99,7 @@ def handle_asset_selection():
 def load_dataset(filename):
     """Load the dataset from the given filename"""
     import pandas as pd
-    df = pd.read_csv(filename)
+    df = pd.read_csv(filename).iloc[:-1]
     df['Month'] = pd.to_datetime(df['Month'])
     df.sort_values(by="Month", inplace=True)
     assets_list = list(df.columns)[1:]
