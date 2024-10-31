@@ -281,14 +281,15 @@ if True:
                 zerolinecolor='lightgray',
                 tickformat='.1f',
                 ticksuffix='%'),
-            xaxis=dict(tickformat='%b-%Y')
+            xaxis=dict(tickformat='%b-%Y'),
+            margin=dict(r=50)
             )
         
         fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         
         st.plotly_chart(fig, use_container_width=True)
-        st.write(f"Notes: data updated till {end_date.strftime(format="%B %d, %Y")}")
+        st.write(f"Notes: data updated till {end_date.strftime(format='%B %d, %Y')}")
         with st.expander("View & Download Data"):
             st.dataframe(normalized_df.round(2))
     
@@ -346,13 +347,14 @@ if True:
                 tickangle=0,
                 categoryorder='total descending'
             ),
+            margin=dict(r=50)
             #margin=dict(t=95, b=95, l=100, r=100)
         )
 
         fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         st.plotly_chart(fig, use_container_width=True)
-        st.write(f"Notes: data updated till {end_date.strftime(format="%B %d, %Y")}")   
+        st.write(f"Notes: data updated till {end_date.strftime(format='%B %d, %Y')}")   
         with st.expander("View &download data "):
             st.dataframe(cagr_data)
 
@@ -426,15 +428,15 @@ with col10:
         height=500,
         yaxis=dict(
         range=[1.15*min(y_values), 1.15*max(y_values)],
-
         gridcolor='lightgray',
         zerolinecolor='lightgray',
         tickformat='.1f'),
         xaxis_title="",
+        margin=dict(r=50)
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig4, use_container_width=True)
-    st.write(f"Notes: data updated till {last_date.strftime(format="%B %d, %Y")}")
+    st.write(f"Notes: data updated till {last_date.strftime(format='%B %d, %Y')}")
     with st.expander("View &download data "):
         st.dataframe(df2)
 
@@ -474,15 +476,15 @@ with col11:
         height=500,
         yaxis=dict(
         range=[1.15*min(y_values), 1.15*max(y_values)],
-        
         gridcolor='lightgray',
         zerolinecolor='lightgray',
         tickformat='.1f'),
         xaxis_title="",
+        margin=dict(r=50)
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig5, use_container_width=True)
-    st.write(f"Notes: data updated till {last_date.strftime(format="%B %d, %Y")}")
+    st.write(f"Notes: data updated till {last_date.strftime(format='%B %d, %Y')}")
     with st.expander("View &download data "):
         st.dataframe(df2)
 
@@ -537,6 +539,7 @@ with col8:
           tickformat='.1f'
       ),
       xaxis_title="",
+      margin=dict(r=50)
       #yaxis_title="Amount"
   )
   st.plotly_chart(fig_folios)
@@ -576,6 +579,6 @@ with col9:
           tickformat='.1f'
       ),
       xaxis_title="",
+      margin=dict(r=50)
   )
   st.plotly_chart(fig_AUM)
-
