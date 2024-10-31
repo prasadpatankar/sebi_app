@@ -223,6 +223,7 @@ if True:
     
     mask = (df['Month'] >= pd.Timestamp(start_date)) & (df['Month'] <= pd.Timestamp(end_date))
     filtered_df = df.loc[mask]
+    filtered_df.columns = [x.replace(" Index","\nIndex") for x in list(filtered_df.columns)]
     normalized_df = normalize_data(filtered_df).reset_index(drop=True)
     first_date = filtered_df['Month'].min()
     last_date = filtered_df['Month'].max()
