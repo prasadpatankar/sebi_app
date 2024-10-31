@@ -223,7 +223,6 @@ if True:
     
     mask = (df['Month'] >= pd.Timestamp(start_date)) & (df['Month'] <= pd.Timestamp(end_date))
     filtered_df = df.loc[mask]
-    filtered_df.columns = [x.replace(" Index","\nIndex") for x in list(filtered_df.columns)]
     normalized_df = normalize_data(filtered_df).reset_index(drop=True)
     first_date = filtered_df['Month'].min()
     last_date = filtered_df['Month'].max()
@@ -350,12 +349,8 @@ if True:
             #margin=dict(t=95, b=95, l=100, r=100)
         )
 
-        # Add subtle grid lines
-        #fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(211,211,211,0.5)')
-
         fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
         fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')
-        
         st.plotly_chart(fig, use_container_width=True)
         st.write(f"Notes: data updated till {end_date.strftime(format="%B %d, %Y")}")   
         with st.expander("View &download data "):
@@ -403,11 +398,9 @@ with col10:
     else:
         selected_columns =  [col for col in all_fpi_cols if ('Equity' in col) and ("USD" in col)] 
     selected_columns_all = [param1] +  selected_columns
-
     df2a= df2.iloc[-13:]
     x_values = df2a[param1].astype('str')
     y_values = df2a[selected_columns[0]]
-
     fig4 = go.Figure()
     fig4.add_trace(
         go.Bar(
@@ -550,9 +543,6 @@ with col8:
 
 # Visualization 1: Bar Chart for Number of Orders by Quarter and Type
 with col9:
-  # Standard title with formatting
-  #st.subheader('Number of MF Folios (in Crore)')
-  # Create Figure with similar elements as fig5
   fig_AUM = go.Figure()
   fig_AUM.add_trace(
       go.Bar(
@@ -586,7 +576,6 @@ with col9:
           tickformat='.1f'
       ),
       xaxis_title="",
-      #yaxis_title="Amount"
   )
   st.plotly_chart(fig_AUM)
 
