@@ -7,25 +7,6 @@ import numpy as np
 import plotly.express as px
 import os
 
-
-def create_dummy_data():
-    end_date = datetime.now().replace(day=1) - timedelta(days=1)
-    dates = pd.date_range(end=end_date, periods=72, freq='M')
-    
-    np.random.seed(42)
-    nifty = np.random.normal(1, 0.02, 72).cumprod() * 8000
-    bonds = np.random.normal(1, 0.01, 72).cumprod() * 6000
-    gold = np.random.normal(1, 0.015, 72).cumprod() * 5000
-    silver = np.random.normal(1, 0.025, 72).cumprod() * 4000
-    
-    return pd.DataFrame({
-        'Month': dates,
-        'Nifty Index': nifty.round(2),
-        'Government Bond Index': bonds.round(2),
-        'Gold': gold.round(2),
-        'Silver': silver.round(2)
-    })
-
 def calculate_cagr(first_value, last_value, num_years):
     """Calculate CAGR given first value, last value and number of years"""
     if first_value <= 0 or last_value <= 0:
@@ -100,7 +81,7 @@ def load_dataset(filename):
     """Load the dataset from the given filename"""
     import pandas as pd
     df = pd.read_csv(filename).iloc[:-1]
-    df['Month'] = pd.to_datetime(df['Month'])
+    df['Month'] = pd.to_datetime(df['Month'], dayfirst=True)
     df.sort_values(by="Month", inplace=True)
     assets_list = list(df.columns)[1:]
     return df, assets_list
@@ -178,7 +159,6 @@ new_assets = st.session_state.selected_assets
 
 if new_assets[0] not in assets_list:
     # Select first three assets by default
-    print("hello")
     default_selected = assets_list[:3]
     st.session_state.selected_assets = default_selected
     initialize_selected_assets(assets_list)
@@ -370,7 +350,7 @@ param2 = st.radio('Select Currency', param2_options, index=1)
 
 file_path_fpi = r"files/dash_fpi.csv"
 df1 = pd.read_csv(file_path_fpi)[:-1]
-df1['Month1'] = pd.to_datetime(df1["Month"])
+df1['Month1'] = pd.to_datetime(df1["Month"], dayfirst=True)
 last_date = df1['Month1'].max()
 df1['Month'] = df1['Month1']  + MonthEnd(0)
 df1= df1.drop("Month1", axis=1)
@@ -582,3 +562,4 @@ with col9:
       margin=dict(r=50)
   )
   st.plotly_chart(fig_AUM)
+
