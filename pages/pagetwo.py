@@ -72,11 +72,11 @@ def process_send(dataframe1):
     try:
         st.write("Uploading Data...")
 
-        df =  dataframe1
+        df =  pd.DataFrame(dataframe1)
         st.write("df")
         st.write(df.head())
 
-        header_row_index = find_header_row(df)
+        header_row_indices = [i for i, row in df.iterrows() if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols]
         st.write("header_row_index")
         st.write(header_row_index)
         
