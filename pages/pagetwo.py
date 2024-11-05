@@ -78,14 +78,8 @@ def process_send(dataframe1):
     Table_Name = "MCR"
     new_data_set = 1
 #    try:
-
-
     df =  pd.DataFrame(dataframe1)
-    st.write("df")
-    st.write(df.head())
-
     header_row_index = 0
-    
     for i, row in df.iterrows():
         rowx = pd.Series(row.values)
         rowx = rowx.fillna("")
