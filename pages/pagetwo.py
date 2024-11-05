@@ -8,7 +8,7 @@ import numpy as np
 from datetime import datetime
 from pandas.tseries.offsets import MonthEnd
 import datefinder
-from sqlalchemy import create_engine
+
 
 st.title("PDF Merger")
 
@@ -55,7 +55,8 @@ if uploaded_files:
         os.makedirs("temp")
 
 def process_send(dataframe1):
-  ### DATA UPLOAD MCR ###
+    from sqlalchemy import create_engine
+    ### DATA UPLOAD MCR ###
     Table_Name = "MCR"
     new_data_set = 1
     try:
