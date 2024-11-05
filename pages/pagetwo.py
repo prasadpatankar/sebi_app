@@ -58,7 +58,7 @@ def process_send(dataframe1):
     from sqlalchemy import create_engine
     import pandas as pd
     import numpy as np
-
+    date_x1 = None
     df2 = pd.DataFrame()
     ### DATA UPLOAD MCR ###
     Table_Name = "MCR"
