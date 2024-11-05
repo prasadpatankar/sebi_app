@@ -143,8 +143,7 @@ def process_send(dataframe1):
 
     
     df2['Upload_Date'] = datetime.now()
-    st.write(df2.tail())
-    st.write("Data Sucessfully Validated, being uploaded on the database")
+    #st.write("Data Sucessfully Validated, being uploaded on the database")
     
 #    except:     
 #        st.write("Data Validation Failed. Please check the table format")
@@ -201,7 +200,7 @@ def process_send(dataframe1):
     
     df15 = df13.groupby(['Month','Sub_Category'])[Numeric_columns].sum().reset_index()
     #df15a = format_dataframe(df15)
-    df15.to_csv(os.path.join('files','MF_m_03.csv'))
+    #df15.to_csv(os.path.join('files','MF_m_03.csv'))
     df15.to_sql(name="MF_m_03", con=engine, if_exists='replace', index=False)
     
     df16 = df13.groupby(['Month'])[Numeric_columns].sum().reset_index()
