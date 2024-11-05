@@ -77,7 +77,7 @@ def process_send(dataframe1):
     Table_Name = "MCR"
     new_data_set = 1
 #    try:
-    st.write("Uploading Data...")
+
 
     df =  pd.DataFrame(dataframe1)
     st.write("df")
@@ -92,16 +92,11 @@ def process_send(dataframe1):
         count = alpha_values.sum()
         if count > 7:
             header_row_index = i
-            break
-            
-    st.write("header_row_index")
-    st.write(header_row_index)
-    
+            break   
     df1 = df.iloc[header_row_index+1:,:]
     df1.columns = df.iloc[header_row_index]
     column_list = list(df1.columns)
-    st.write("df1")
-    st.write(df1.head())
+
     text1 = " ".join(column_list)
     matches = datefinder.find_dates(text1)
     match_list = []
@@ -157,10 +152,7 @@ def process_send(dataframe1):
     
 #    except:     
 #        st.write("Data Validation Failed. Please check the table format")
-
-
-    st.write("df2")
-    st.write(df2.tail())         
+       
     if new_data_set ==1:
     
         Table_Name = "MCR"
@@ -204,7 +196,7 @@ def process_send(dataframe1):
     df13.sort_values(by = ['Month'], inplace=True)
     with open('files/MF_m_01.csv', 'w') as f:
         df13.to_csv(f, index=False)
-    st.write(df13.head())
+    
     
     #df13a = format_dataframe(df13)
     
@@ -225,7 +217,7 @@ def process_send(dataframe1):
     #df16a = format_dataframe(df16)
     df16.to_sql(name="MF_m_02", con=engine, if_exists='replace', index=False)
     st.markdown(f"✅ **Data is Successfully Validated and Uploaded in the Database.")
-
+    st.write(df13.head())
 
 st.title("Upload Data")
 
