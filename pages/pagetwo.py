@@ -73,7 +73,7 @@ def process_send(dataframe1):
     Table_Name = "MCR"
     new_data_set = 1
     try:
-        print("Uploading Data...")
+        st.write("Uploading Data...")
 
         df =  dataframe1.iloc[1:]
         st.write("df")
@@ -115,7 +115,7 @@ def process_send(dataframe1):
             
                 if len(df2.columns)!=13:
             
-                    print("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 13))
+                    st.write("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 13))
             
                 else:
             
@@ -127,7 +127,7 @@ def process_send(dataframe1):
             
                 if len(df2.columns)!=13:
             
-                    print("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 11))
+                    st.write("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 11))
             
                 else:
             
@@ -138,13 +138,13 @@ def process_send(dataframe1):
             
             df2['Upload_Date'] = datetime.now()
         
-            print("Data Sucessfully Validated, being uploaded on the database")
+            st.write("Data Sucessfully Validated, being uploaded on the database")
         
         except:
           
-            print("Data Validation Failed. Please check the table format")
+            st.write("Data Validation Failed. Please check the table format")
     except:
-        print("File Upload Failed")
+        st.write("File Upload Failed")
 
     st.write("df2")
     st.write(df2.tail())         
