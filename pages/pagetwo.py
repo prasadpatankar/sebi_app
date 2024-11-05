@@ -168,7 +168,7 @@ def process_send(dataframe1):
     engine = create_engine(sql_query)
 
     df2.to_sql(name=Table_Name, con=engine, if_exists='append', index=False)
-    #x2 = date_x1.strftime("%b-%Y")
+    x2 = date_x1.strftime("%b-%Y")
     query =f"SELECT * FROM MCR"
     df11 = pd.read_sql_query(query, engine)
     query =f"SELECT * FROM MCR2"
@@ -187,6 +187,7 @@ def process_send(dataframe1):
     df13['Main_Category'] = df13['Main_Category'].str.split("-").str[1]
     df13.sort_values(by = ['Month'], inplace=True)
     df13.to_csv(os.path.join('files','MF_m_01.csv'))
+    st.write(df13.head())
     
     #df13a = format_dataframe(df13)
     
@@ -206,7 +207,8 @@ def process_send(dataframe1):
     df16.to_csv(os.path.join('files','MF_m_02.csv'))
     #df16a = format_dataframe(df16)
     df16.to_sql(name="MF_m_02", con=engine, if_exists='replace', index=False)
-    print('****')
+    st.markdown(f"✅ **Data for {x2} is Successfully Validated and Uploaded in the Database.")
+
 
 st.title("Upload Data")
 
@@ -216,15 +218,12 @@ if uploaded_file is not None:
     try:
         if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
             df = pd.read_excel(uploaded_file)
-            st.dataframe(df)
             process_send(df)
 
         elif uploaded_file.type == "text/csv":
             df = pd.read_csv(uploaded_file)
-            st.dataframe(df)
             process_send(df)
         else:
             raise ValueError("Invalid file format. Please upload a CSV or Excel file.")
-
     except ValueError as e:
         st.error(e)
