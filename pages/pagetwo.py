@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from pandas.tseries.offsets import MonthEnd
-import pyodbc
 import datefinder
 from sqlalchemy import create_engine
 
