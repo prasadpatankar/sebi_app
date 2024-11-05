@@ -55,6 +55,7 @@ if uploaded_files:
         os.makedirs("temp")
 
 def find_header_row(df, min_alpha_cols =3):
+    import pandas as pd
     for i, row in df.iloc.iterrows():
         rowx = pd.Series(row.values)
         rowx = rowx.fillna("")
