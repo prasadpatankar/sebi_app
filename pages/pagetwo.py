@@ -76,9 +76,13 @@ def process_send(dataframe1):
         print("Uploading Data...")
 
         df =  dataframe1
+        st.write("df")
+        st.write(df.tail())
         try:
 
             header_row_index = find_header_row(df)
+            st.write(header_row_index)
+            break()
             df1 = df.iloc[header_row_index+2:,:]
             df1.columns = df.iloc[header_row_index+1]
             column_list = list(df1.columns)
