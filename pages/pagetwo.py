@@ -92,7 +92,17 @@ def process_send(dataframe1):
            
             df1.columns = df.iloc[skip_rows]
             column_list = list(df1.columns)
-            date_x1 = find_dates1(column_list)
+
+            text1 = " ".join(list1)
+            matches = datefinder.find_dates(text1)
+            match_list = []
+            for match in matches:
+                match_list.append(match)
+            st.write(match_list)
+            date_x1  = pd.to_datetime(np.unique(match_list).max())
+            st.write(date_x1)
+                    
+            #date_x1 = find_dates1(column_list)
             df1 = df1.dropna(subset = column_list[1])
             df1 = df1[~df1.iloc[:,1].str.contains("sub", case=False)]
             Totals = df1[df1.iloc[:,1].str.contains("Total", case=False)]
