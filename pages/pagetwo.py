@@ -75,15 +75,16 @@ def process_send(dataframe1):
     try:
         st.write("Uploading Data...")
 
-        df =  dataframe1.iloc[1:]
+        df =  dataframe1
         st.write("df")
         st.write(df.head())
 
         header_row_index = 0
         for i, row in df.iterrows():
             if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols:
+                st.write(i)
                 header_row_index=i
-
+        st.write("header_row_index")
         st.write(header_row_index)
         
         df1 = df.iloc[header_row_index+2:,:]
