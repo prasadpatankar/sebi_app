@@ -60,6 +60,17 @@ def find_header_row(df, min_alpha_cols=7):
             return i
     return None
 
+def find_dates(list1):
+    import datefinder
+    text1 = " ".join(list1)
+    matches = datefinder.find_dates(text1)
+    match_list = []
+    for match in matches:
+      match_list.append(match)
+    date_x1  = pd.to_datetime(np.unique(match_list).max())
+    return date_x1
+    
+    
 
 def process_send(dataframe1):
     from sqlalchemy import create_engine
@@ -77,8 +88,10 @@ def process_send(dataframe1):
         try:
             header_row_index = find_header_row(df)
             df1 = df.iloc[header_row_index:,:]
+           
             df1.columns = df.iloc[skip_rows]
             column_list = list(df1.columns)
+            date_x1 = find_dates(column_list)
             df1 = df1.dropna(subset = column_list[1])
             df1 = df1[~df1.iloc[:,1].str.contains("sub", case=False)]
             Totals = df1[df1.iloc[:,1].str.contains("Total", case=False)]
@@ -94,8 +107,7 @@ def process_send(dataframe1):
         
             for match in matches:
                 match_list.append(match)
-            date_x1  = pd.to_datetime(np.unique(match_list).max())
-        
+                   
        
             for row in column_list:
         
