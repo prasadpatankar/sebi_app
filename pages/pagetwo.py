@@ -82,7 +82,7 @@ def process_send(dataframe1):
             df1.columns = df.iloc[skip_rows]
             column_list = list(df1.columns)
 
-            text1 = " ".join(list1)
+            text1 = " ".join(column_list)
             matches = datefinder.find_dates(text1)
             match_list = []
             for match in matches:
