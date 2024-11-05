@@ -112,7 +112,6 @@ def process_send(dataframe1):
     df1 = df1[df1.iloc[:,1].str.len()>=4]
     df2 = df1[df1.isna().sum(axis=1)<=4]
     df2 = df2[~df2.iloc[:,1].str.contains("Total|Domestic", case=False)]
-    st.write(df2.head())
     
     for row in column_list:
         if "segregated" in str(row).lower():  
@@ -144,7 +143,7 @@ def process_send(dataframe1):
 
     
     df2['Upload_Date'] = datetime.now()
-    st.write(df2.head())
+    st.write(df2.tail())
     st.write("Data Sucessfully Validated, being uploaded on the database")
     
 #    except:     
@@ -212,7 +211,7 @@ def process_send(dataframe1):
     #df16a = format_dataframe(df16)
     df16.to_sql(name="MF_m_02", con=engine, if_exists='replace', index=False)
     st.markdown(f"✅ **Data is Successfully Validated and Uploaded in the Database.")
-    st.write(df13.head())
+    st.write(df13.tail())
 
 st.title("Upload Data")
 
