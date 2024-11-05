@@ -166,7 +166,7 @@ def process_send(dataframe1):
     engine = create_engine(sql_query)
 
     df2.to_sql(name=Table_Name, con=engine, if_exists='append', index=False)
-    st.write(df2.tail())
+
     #x2 = date_x1.strftime("%b-%Y")
     query =f"SELECT * FROM MCR"
     df11 = pd.read_sql_query(query, engine)
@@ -174,8 +174,6 @@ def process_send(dataframe1):
     query =f"SELECT * FROM MCR2"
     df12 = pd.read_sql_query(query, engine)
     df13 = pd.concat([df12.iloc[1:],df11])
-    st.write("df13")
-    st.write(df13.tail())
     
     df13 = df13[df13['Scheme_Type'].str.len()>=4]
     df13 = df13[df13['Month'] > pd.to_datetime("2019/01/01")]
