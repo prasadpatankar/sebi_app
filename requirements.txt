@@ -4,11 +4,7 @@ streamlit==1.36.0
 streamlit-option-menu==0.4.0
 openpyxl==3.1.4
 numpy==1.26.4
-google-ai-generativelanguage==0.6.10
-google-api-core==2.21.0
-google-api-python-client==2.149.0
-google-auth==2.35.0
-google-auth-httplib2==0.2.0
 google-generativeai==0.8.3
-googleapis-common-protos==1.65.0
 plotly==5.19.0
+SQLAlchemy==2.0.29
+datefinder==0.7.3
