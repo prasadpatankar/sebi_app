@@ -54,11 +54,16 @@ if uploaded_files:
     if not os.path.exists("temp"):
         os.makedirs("temp")
 
-def find_header_row(df, min_alpha_cols=7):
-    header_row_indices = [i for i, row in df.iterrows() if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols]
-    return header_row_indices
-   
-    
+def find_header_row(df, min_alpha_cols =3):
+    for i, row in df.iloc.iterrows():
+        rowx = pd.Series(row.values)
+        rowx = rowx.fillna("")
+        alpha_values = rowx.astype(str).str.contains(r'[a-zA-Z]', na=False)
+        count = alpha_values.sum()
+        if count > min_alpha_cols:
+            return i
+            break
+          
 
 def process_send(dataframe1):
     from sqlalchemy import create_engine
@@ -76,11 +81,7 @@ def process_send(dataframe1):
         st.write("df")
         st.write(df.head())
 
-        for i, row in df.iloc[0:4].iterrows():
-            st.write(i)
-            st.write(row)
-
-        header_row_indices = [i for i, row in df.iterrows() if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols]
+        header_row_indices = find_header_row (df)
         st.write("header_row_index")
         st.write(header_row_index)
         
