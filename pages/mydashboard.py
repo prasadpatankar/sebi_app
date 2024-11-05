@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import numpy as np
 import plotly.express as px
 import os
+from sqlalchemy import create_engine
 
 def calculate_cagr(first_value, last_value, num_years):
     """Calculate CAGR given first value, last value and number of years"""
