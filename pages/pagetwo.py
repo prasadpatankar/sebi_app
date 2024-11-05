@@ -56,6 +56,7 @@ if uploaded_files:
 
 def process_send(dataframe1):
     from sqlalchemy import create_engine
+    df2 = pd.DataFrame()
     ### DATA UPLOAD MCR ###
     Table_Name = "MCR"
     new_data_set = 1
