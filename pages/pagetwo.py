@@ -72,6 +72,7 @@ def process_send(dataframe1):
     import numpy as np
     import datefinder
     from pandas.tseries.offsets import MonthEnd
+    from datetime import datetime
     df2 = pd.DataFrame()
     ### DATA UPLOAD MCR ###
     Table_Name = "MCR"
