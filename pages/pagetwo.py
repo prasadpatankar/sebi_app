@@ -82,7 +82,7 @@ def process_send(dataframe1):
     st.write("df")
     st.write(df.head())
 
-    header_row_indices = 0
+    header_row_index = 0
     
     for i, row in df.iterrows():
         rowx = pd.Series(row.values)
@@ -90,7 +90,7 @@ def process_send(dataframe1):
         alpha_values = rowx.astype(str).str.contains(r'[a-zA-Z]', na=False)
         count = alpha_values.sum()
         if count > 7:
-            header_row_indices = i
+            header_row_index = i
             break
             
     st.write("header_row_index")
