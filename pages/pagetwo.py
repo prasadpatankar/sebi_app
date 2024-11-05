@@ -211,7 +211,7 @@ uploaded_file = st.file_uploader("Choose a file", type=["csv", "xlsx"])
 if uploaded_file is not None:
     try:
         if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-            df = pd.read_excel(uploaded_file)
+            df = pd.read_excel(uploaded_file, header=1)
             process_send(df)
 
         elif uploaded_file.type == "text/csv":
