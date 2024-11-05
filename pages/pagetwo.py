@@ -81,70 +81,68 @@ def process_send(dataframe1):
         header_row_index = find_header_row(df)
         st.write(header_row_index)
         
-        try:
-            df1 = df.iloc[header_row_index+2:,:]
-            df1.columns = df.iloc[header_row_index+1]
-            column_list = list(df1.columns)
-            st.write("df1")
-            st.write(df1.head())
-            text1 = " ".join(column_list)
-            matches = datefinder.find_dates(text1)
-            match_list = []
-            
-            for match in matches:
-                match_list.append(match)
-            date_x1  = pd.to_datetime(np.unique(match_list).max())
-                    
-            #date_x1 = find_dates1(column_list)
-            df1 = df1.dropna(subset = column_list[1])
-            df1 = df1[~df1.iloc[:,1].str.contains("sub", case=False)]
-            Totals = df1[df1.iloc[:,1].str.contains("Total", case=False)]
-            df1["Main_Category"] = np.where(df1.iloc[:,1].str.contains("Total", case=False),df1['Scheme Category'],np.NaN)
-            df1["Main_Category"] = df1["Main_Category"].bfill()
-            df1["Sub_Category"] = np.where(df1.isna().sum(axis=1)>=4,df1['Scheme Category'],np.NaN)
-            df1["Sub_Category"] = df1["Sub_Category"].ffill()
-            df1 = df1[df1.iloc[:,1].str.len()>=4]
-            df2 = df1[df1.isna().sum(axis=1)<=4]
-            df2 = df2[~df2.iloc[:,1].str.contains("Total|Domestic", case=False)]
-            
-            for row in column_list:
-                if "segregated" in str(row).lower():  
-                    new_data_set = 2
-            
-            if new_data_set ==2:
-            
-                if len(df2.columns)!=13:
-            
-                    st.write("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 13))
-            
-                else:
-            
-                    df2.columns = ['Sr', 'Scheme_Type', 'No_scheme', 'No_Folios', 'Funds_Mobilised_YTD', 'Redemptions_YTD', 'Net_Inflow_YTD', 'Net_AUM', 'Average_AUM', 'No_Folios_segregated', 'AUM_segregated_folio', 'Main_Category', 'Sub_Category']
-            
-            
-            
-            elif new_data_set ==1:
-            
-                if len(df2.columns)!=13:
-            
-                    st.write("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 11))
-            
-                else:
-            
-                    df2.columns = ['Sr', 'Scheme_Type', 'No_scheme', 'No_Folios', 'Funds_Mobilised_YTD', 'Redemptions_YTD', 'Net_Inflow_YTD', 'Net_AUM', 'Average_AUM', 'Main_Category', 'Sub_Category']
-            
-            df2['Month'] = date_x1 + MonthEnd(0)
+        df1 = df.iloc[header_row_index+2:,:]
+        df1.columns = df.iloc[header_row_index+1]
+        column_list = list(df1.columns)
+        st.write("df1")
+        st.write(df1.head())
+        text1 = " ".join(column_list)
+        matches = datefinder.find_dates(text1)
+        match_list = []
+        
+        for match in matches:
+            match_list.append(match)
+        date_x1  = pd.to_datetime(np.unique(match_list).max())
+                
+        #date_x1 = find_dates1(column_list)
+        df1 = df1.dropna(subset = column_list[1])
+        df1 = df1[~df1.iloc[:,1].str.contains("sub", case=False)]
+        Totals = df1[df1.iloc[:,1].str.contains("Total", case=False)]
+        df1["Main_Category"] = np.where(df1.iloc[:,1].str.contains("Total", case=False),df1['Scheme Category'],np.NaN)
+        df1["Main_Category"] = df1["Main_Category"].bfill()
+        df1["Sub_Category"] = np.where(df1.isna().sum(axis=1)>=4,df1['Scheme Category'],np.NaN)
+        df1["Sub_Category"] = df1["Sub_Category"].ffill()
+        df1 = df1[df1.iloc[:,1].str.len()>=4]
+        df2 = df1[df1.isna().sum(axis=1)<=4]
+        df2 = df2[~df2.iloc[:,1].str.contains("Total|Domestic", case=False)]
+        
+        for row in column_list:
+            if "segregated" in str(row).lower():  
+                new_data_set = 2
+        
+        if new_data_set ==2:
+        
+            if len(df2.columns)!=13:
+        
+                st.write("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 13))
+        
+            else:
+        
+                df2.columns = ['Sr', 'Scheme_Type', 'No_scheme', 'No_Folios', 'Funds_Mobilised_YTD', 'Redemptions_YTD', 'Net_Inflow_YTD', 'Net_AUM', 'Average_AUM', 'No_Folios_segregated', 'AUM_segregated_folio', 'Main_Category', 'Sub_Category']
+        
+        
+        
+        elif new_data_set ==1:
+        
+            if len(df2.columns)!=13:
+        
+                st.write("error in data - No of columns are {} instaed of {} ".format(len(df2.columns), 11))
+        
+            else:
+        
+                df2.columns = ['Sr', 'Scheme_Type', 'No_scheme', 'No_Folios', 'Funds_Mobilised_YTD', 'Redemptions_YTD', 'Net_Inflow_YTD', 'Net_AUM', 'Average_AUM', 'Main_Category', 'Sub_Category']
+        
+        df2['Month'] = date_x1 + MonthEnd(0)
 
-            
-            df2['Upload_Date'] = datetime.now()
         
-            st.write("Data Sucessfully Validated, being uploaded on the database")
-        
-        except:
-          
-            st.write("Data Validation Failed. Please check the table format")
+        df2['Upload_Date'] = datetime.now()
+    
+        st.write("Data Sucessfully Validated, being uploaded on the database")
+    
     except:
-        st.write("File Upload Failed")
+      
+        st.write("Data Validation Failed. Please check the table format")
+
 
     st.write("df2")
     st.write(df2.tail())         
