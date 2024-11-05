@@ -54,6 +54,13 @@ if uploaded_files:
     if not os.path.exists("temp"):
         os.makedirs("temp")
 
+def find_header_row(df, min_alpha_cols=7):
+    for i, row in df.iterrows():
+        if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols:
+            return i
+    return None
+
+
 def process_send(dataframe1):
     from sqlalchemy import create_engine
     import pandas as pd
@@ -68,13 +75,8 @@ def process_send(dataframe1):
 
         df =  dataframe1
         try:
-            skip_rows = None
-            for i, row in df.iterrows():
-                if "folio" in str(row).lower():
-                    skip_rows = i
-                   
-                    break
-            df1 = df.iloc[skip_rows+1:,:]
+            header_row_index = find_header_row(df)
+            df1 = df.iloc[header_row_index:,:]
             df1.columns = df.iloc[skip_rows]
             column_list = list(df1.columns)
             df1 = df1.dropna(subset = column_list[1])
@@ -94,8 +96,7 @@ def process_send(dataframe1):
                 match_list.append(match)
             date_x1  = pd.to_datetime(np.unique(match_list).max())
         
-
-        
+       
             for row in column_list:
         
                 if "segregated" in str(row).lower():
@@ -167,7 +168,6 @@ def process_send(dataframe1):
     engine = create_engine(sql_query)
 
     df2.to_sql(name=Table_Name, con=engine, if_exists='append', index=False)
-    st.write(date_x1)
     #x2 = date_x1.strftime("%b-%Y")
     query =f"SELECT * FROM MCR"
     df11 = pd.read_sql_query(query, engine)
