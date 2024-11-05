@@ -82,7 +82,7 @@ def process_send(dataframe1):
             df1 = df.iloc[header_row_index+2:,:]
             df1.columns = df.iloc[header_row_index+1]
             column_list = list(df1.columns)
-            
+            print(df1.head())
             text1 = " ".join(column_list)
             matches = datefinder.find_dates(text1)
             match_list = []
@@ -142,7 +142,8 @@ def process_send(dataframe1):
     except:
         print("File Upload Failed")
 
-
+    st.write("df2")
+    st.write(df2.tail())         
     if new_data_set ==1:
     
         Table_Name = "MCR"
