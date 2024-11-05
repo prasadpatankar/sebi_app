@@ -60,17 +60,6 @@ def find_header_row(df, min_alpha_cols=7):
             return i
     return None
 
-def find_dates1(list1):
-    import datefinder
-    text1 = " ".join(list1)
-    matches = datefinder.find_dates(text1)
-    match_list = []
-    for match in matches:
-        match_list.append(match)
-    st.write(match_list)
-    date_x1  = pd.to_datetime(np.unique(match_list).max())
-    st.write(date_x1)
-    return date_x1
     
     
 
