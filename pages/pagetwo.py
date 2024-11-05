@@ -76,6 +76,10 @@ def process_send(dataframe1):
         st.write("df")
         st.write(df.head())
 
+        for i, row in df.iloc[0:4].iterrows():
+            st.write(i)
+            st.write(row)
+
         header_row_indices = [i for i, row in df.iterrows() if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols]
         st.write("header_row_index")
         st.write(header_row_index)
