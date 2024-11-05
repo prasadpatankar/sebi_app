@@ -79,8 +79,8 @@ def process_send(dataframe1):
         try:
 
             header_row_index = find_header_row(df)
-            df1 = df.iloc[header_row_index+1:,:]
-            df1.columns = df.iloc[header_row_index]
+            df1 = df.iloc[header_row_index+2:,:]
+            df1.columns = df.iloc[header_row_index+1]
             column_list = list(df1.columns)
             
             text1 = " ".join(column_list)
@@ -211,7 +211,7 @@ uploaded_file = st.file_uploader("Choose a file", type=["csv", "xlsx"])
 if uploaded_file is not None:
     try:
         if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-            df = pd.read_excel(uploaded_file, header=1)
+            df = pd.read_excel(uploaded_file)
             process_send(df)
 
         elif uploaded_file.type == "text/csv":
