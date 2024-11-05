@@ -85,13 +85,13 @@ def process_send(dataframe1):
     header_row_indices = 0
     
     for i, row in df.iterrows():
-    rowx = pd.Series(row.values)
-    rowx = rowx.fillna("")
-    alpha_values = rowx.astype(str).str.contains(r'[a-zA-Z]', na=False)
-    count = alpha_values.sum()
-    if count > min_alpha_cols:
-        header_row_indices = i
-        break
+        rowx = pd.Series(row.values)
+        rowx = rowx.fillna("")
+        alpha_values = rowx.astype(str).str.contains(r'[a-zA-Z]', na=False)
+        count = alpha_values.sum()
+        if count > min_alpha_cols:
+            header_row_indices = i
+            break
             
     st.write("header_row_index")
     st.write(header_row_index)
