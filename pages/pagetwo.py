@@ -78,7 +78,6 @@ def process_send(dataframe1):
     from sqlalchemy import create_engine
     import pandas as pd
     import numpy as np
-    date_x1 = None
     df2 = pd.DataFrame()
     ### DATA UPLOAD MCR ###
     Table_Name = "MCR"
@@ -182,7 +181,7 @@ def process_send(dataframe1):
     engine = create_engine(sql_query)
 
     df2.to_sql(name=Table_Name, con=engine, if_exists='append', index=False)
-    x2 = date_x1.strftime("%b-%Y")
+    #x2 = date_x1.strftime("%b-%Y")
     query =f"SELECT * FROM MCR"
     df11 = pd.read_sql_query(query, engine)
     query =f"SELECT * FROM MCR2"
@@ -222,7 +221,7 @@ def process_send(dataframe1):
     df16.to_csv(os.path.join('files','MF_m_02.csv'))
     #df16a = format_dataframe(df16)
     df16.to_sql(name="MF_m_02", con=engine, if_exists='replace', index=False)
-    st.markdown(f"✅ **Data for {x2} is Successfully Validated and Uploaded in the Database.")
+    st.markdown(f"✅ **Data is Successfully Validated and Uploaded in the Database.")
 
 
 st.title("Upload Data")
