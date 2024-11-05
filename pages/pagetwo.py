@@ -67,6 +67,7 @@ def process_send(dataframe1):
     from sqlalchemy import create_engine
     import pandas as pd
     import numpy as np
+    import datefinder
     df2 = pd.DataFrame()
     ### DATA UPLOAD MCR ###
     Table_Name = "MCR"
@@ -122,7 +123,7 @@ def process_send(dataframe1):
             df2 = df2[~df2.iloc[:,1].str.contains("Total|Domestic", case=False)]
         
         
-
+            
         
             if new_data_set ==2:
         
@@ -150,7 +151,8 @@ def process_send(dataframe1):
         
             df2['Month'] = date_x1 + MonthEnd(0)
         
-        
+            st.write(df2.head())
+            
             df2['Upload_Date'] = datetime.now()
         
             print("Data Sucessfully Validated, being uploaded on the database")
