@@ -167,7 +167,8 @@ def process_send(dataframe1):
     engine = create_engine(sql_query)
 
     df2.to_sql(name=Table_Name, con=engine, if_exists='append', index=False)
-    x2 = date_x1.strftime("%b-%Y")
+    st.write(date_x1)
+    #x2 = date_x1.strftime("%b-%Y")
     query =f"SELECT * FROM MCR"
     df11 = pd.read_sql_query(query, engine)
     query =f"SELECT * FROM MCR2"
