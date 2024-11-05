@@ -89,7 +89,7 @@ def process_send(dataframe1):
         rowx = rowx.fillna("")
         alpha_values = rowx.astype(str).str.contains(r'[a-zA-Z]', na=False)
         count = alpha_values.sum()
-        if count > min_alpha_cols:
+        if count > 7:
             header_row_indices = i
             break
             
