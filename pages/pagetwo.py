@@ -99,9 +99,8 @@ def process_send(dataframe1):
     for match in matches:
         match_list.append(match)
 
-    st.write(match_list)
     date_x1  = pd.to_datetime(np.unique(match_list).max())
-    st.write(date_x1)        
+      
     #date_x1 = find_dates1(column_list)
     df1 = df1.dropna(subset = column_list[1])
     df1 = df1[~df1.iloc[:,1].str.contains("sub", case=False)]
@@ -145,7 +144,7 @@ def process_send(dataframe1):
 
     
     df2['Upload_Date'] = datetime.now()
-
+    st.write(df2.head())
     st.write("Data Sucessfully Validated, being uploaded on the database")
     
 #    except:     
