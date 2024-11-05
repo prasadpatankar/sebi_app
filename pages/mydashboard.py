@@ -488,8 +488,8 @@ user="avnadmin"
 sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
 engine = create_engine(sql_query)
 query = f"SELECT * FROM {Table_Name}"
-df = pd.read_sql_query(query, engine)
-
+df = pd.read_sql_query(query, engine).iloc[-12:0]
+st.write(df)
 
 #df = pd.read_csv(file_path_mf2).iloc[-12:]
 df['Net_AUM'] = df['Net_AUM'].str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
