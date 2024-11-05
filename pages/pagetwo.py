@@ -55,12 +55,9 @@ if uploaded_files:
         os.makedirs("temp")
 
 def find_header_row(df, min_alpha_cols=7):
-    for i, row in df.iterrows():
-        if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols:
-            return i
-    return None
-
-    
+    header_row_indices = [i for i, row in df.iterrows() if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols]
+    return header_row_indices
+   
     
 
 def process_send(dataframe1):
@@ -79,11 +76,7 @@ def process_send(dataframe1):
         st.write("df")
         st.write(df.head())
 
-        header_row_index = 0
-        for i, row in df.iterrows():
-            if sum(row.astype(str).str.contains(r'[a-zA-Z]', na=False)) >= min_alpha_cols:
-                st.write(i)
-                header_row_index=i
+        header_row_index = find_header_row(df)
         st.write("header_row_index")
         st.write(header_row_index)
         
