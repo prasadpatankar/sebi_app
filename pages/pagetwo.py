@@ -56,7 +56,7 @@ if uploaded_files:
 
 def find_header_row(df, min_alpha_cols =3):
     import pandas as pd
-    for i, row in df.iloc.iterrows():
+    for i, row in df.iterrows():
         rowx = pd.Series(row.values)
         rowx = rowx.fillna("")
         alpha_values = rowx.astype(str).str.contains(r'[a-zA-Z]', na=False)
@@ -81,8 +81,8 @@ def process_send(dataframe1):
     df =  pd.DataFrame(dataframe1)
     st.write("df")
     st.write(df.head())
-
-    header_row_indices = find_header_row (df)
+  
+    header_row_indices = find_header_row(df)
     st.write("header_row_index")
     st.write(header_row_index)
     
