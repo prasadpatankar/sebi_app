@@ -186,7 +186,8 @@ def process_send(dataframe1):
     df13 = df13[['Month', 'Main_Category',  'Sub_Category', 'Scheme_Type', 'No_scheme', 'No_Folios',  'Funds_Mobilised_YTD',  'Redemptions_YTD',  'Net_Inflow_YTD', 'Net_AUM',  'Average_AUM',  'No_Folios_segregated', 'AUM_segregated_folio','Upload_Date']] 
     df13['Main_Category'] = df13['Main_Category'].str.split("-").str[1]
     df13.sort_values(by = ['Month'], inplace=True)
-    df13.to_csv(os.path.join('files','MF_m_01.csv'))
+    with open('files/MF_m_01.csv', 'w') as f:
+        df13.to_csv(f, index=False)
     st.write(df13.head())
     
     #df13a = format_dataframe(df13)
