@@ -75,7 +75,7 @@ def process_send(dataframe1):
     try:
         print("Uploading Data...")
 
-        df =  dataframe1
+        df =  dataframe1.iloc[1:]
         st.write("df")
         st.write(df.head())
         header_row_index = find_header_row(df)
@@ -85,7 +85,8 @@ def process_send(dataframe1):
             df1 = df.iloc[header_row_index+2:,:]
             df1.columns = df.iloc[header_row_index+1]
             column_list = list(df1.columns)
-            print(df1.head())
+            st.write("df1")
+            st.write(df1.head())
             text1 = " ".join(column_list)
             matches = datefinder.find_dates(text1)
             match_list = []
