@@ -111,6 +111,7 @@ def process_send(dataframe1):
     df1 = df1[df1.iloc[:,1].str.len()>=4]
     df2 = df1[df1.isna().sum(axis=1)<=4]
     df2 = df2[~df2.iloc[:,1].str.contains("Total|Domestic", case=False)]
+    st.write(df2.head())
     
     for row in column_list:
         if "segregated" in str(row).lower():  
