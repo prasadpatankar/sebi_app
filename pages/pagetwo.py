@@ -85,8 +85,8 @@ def process_send(dataframe1):
         st.write("header_row_index")
         st.write(header_row_index)
         
-        df1 = df.iloc[header_row_index+2:,:]
-        df1.columns = df.iloc[header_row_index+1]
+        df1 = df.iloc[header_row_index+1:,:]
+        df1.columns = df.iloc[header_row_index]
         column_list = list(df1.columns)
         st.write("df1")
         st.write(df1.head())
