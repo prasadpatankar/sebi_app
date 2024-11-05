@@ -19,7 +19,7 @@ except Exception as e:
     st.error(f"An error occurred loading the database file: {e}")
     st.stop()
 
-st.title("DataFrame Filtering with Auto-Prompt Text Boxes")
+st.title("Filter Database Tables")
 
 # --- Category Dropdown ---
 categories = db_home["Category"].unique()
