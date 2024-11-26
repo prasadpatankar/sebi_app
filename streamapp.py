@@ -37,7 +37,7 @@ def main():
     )
 
     # Display the top-level title
-    st.title("DATABASE of  INDIAN SECURITIES MARKET ")
+    st.title("Database of Indian Securities Market (DISM)")
 
     # Create the navigation bar using option_menu
     selected_page = option_menu(
