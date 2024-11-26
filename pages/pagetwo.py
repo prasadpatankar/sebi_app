@@ -229,3 +229,23 @@ if uploaded_file is not None:
             raise ValueError("Invalid file format. Please upload a CSV or Excel file.")
     except ValueError as e:
         st.error(e)
+
+st.title("Demo of MF data being updated on Server")
+from sqlalchemy import create_engine
+import pandas as pd
+import numpy as np
+import datefinder
+from pandas.tseries.offsets import MonthEnd
+from datetime import datetime
+## Read Data
+Table_Name = "MF_m_01"
+db="defaultdb"
+host="prasadmysql-sebidatabase1.b.aivencloud.com"
+password="AVNS_5gFFh3T1VBzgguK4J2W"
+port="12352"
+user="avnadmin"
+sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
+engine = create_engine(sql_query)
+query = f"SELECT * FROM {Table_Name}"
+df = pd.read_sql_query(query, engine)
+st.write(df.tail())
