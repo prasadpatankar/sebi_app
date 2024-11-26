@@ -8,7 +8,6 @@ page_titles = {
 "Dashboard": "mydashboard.py",
 "Database": "database.py",
 "Filter Data": "filterdf.py",
-"ChatGPT": "ChatGPT.py",
 "Utilities": "pagetwo.py",
 }
 
