@@ -248,4 +248,4 @@ sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
 engine = create_engine(sql_query)
 query = f"SELECT * FROM {Table_Name}"
 df = pd.read_sql_query(query, engine)
-st.write(df.tail())
+st.write(df.tail(20))
