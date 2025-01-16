@@ -51,7 +51,28 @@ def main():
         styles={
             "container": {"padding": "5px"},
             "icon": {"color": "blue", "font-size": "25px"},
-            "nav-link": {"font-size": "18px", "text-align": "left"},
+            "nav-link": {
+                "font-size": "18px",
+                "text-align": "left",
+                "onmouseover": """
+                    function(e) {
+                        const link = e.target.closest('a');
+                        if (link) {
+                            const pageTitle = link.textContent; // Get the page title
+                            const pagePath = link.getAttribute('href'); // Get existing href
+                            link.setAttribute('href', 'https://sebiapp.streamlit.app/?page=' + pageTitle); // Modify href with your Streamlit Cloud URL
+                        }
+                    }
+                """,
+                "onmouseout": """
+                    function(e) {
+                        const link = e.target.closest('a');
+                        if (link) {
+                            link.setAttribute('href', 'https://sebiapp.streamlit.app/'); // Restore href to your Streamlit Cloud URL
+                        }
+                    }
+                """,
+            }
         }
         
     )
