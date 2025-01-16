@@ -247,7 +247,7 @@ if True:
                 'text': f'Absolute Returns ({first_date.strftime("%b %Y")} - {last_date.strftime("%b %Y")})',
                 'y': 0.95,
                 'x': 0.5,
-                'xanchor': 'right',
+                'xanchor': 'center',
                 'yanchor': 'top',
                 'font': dict(size=20)
             },
@@ -520,7 +520,7 @@ with col8:
           'text': 'Number of MF Folios (in Crore)',
           'y': 0.95,
           'x': 0.5,
-          'xanchor': 'right',
+          'xanchor': 'center',
           'yanchor': 'top',
           'font': dict(size=20)
       },
@@ -560,7 +560,7 @@ with col9:
           'text': 'MF AUM (in Rs Lakh Crore)',
           'y': 0.95,
           'x': 0.5,
-          'xanchor': 'right',
+          'xanchor': 'center',
           'yanchor': 'top',
           'font': dict(size=20)
       },
