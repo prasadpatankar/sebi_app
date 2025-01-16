@@ -15,6 +15,8 @@ page_titles = {
 def load_page(page_title):
     if page_title in page_titles:
         file_path = os.path.join("pages", page_titles[page_title])
+        st.page_link(page=file_path, label=page_title, icon="🏠")
+        
         if os.path.exists(file_path):
             try:
                 exec(open(file_path, encoding='utf-8').read())
