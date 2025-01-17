@@ -961,3 +961,353 @@ index,Month,Parameter,Main-Sector,Sub-Sector,Industry,Value,Upload_Date,rank
 959.00,30-04-2024,No of Issues,Telecommunication,Telecommunication,Telecom - Services,2.00,16-10-2024,1.00
 960.00,30-04-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,1.00,16-10-2024,1.00
 961.00,30-04-2024,No of Issues,Services,Services,Transport Services,1.00,16-10-2024,1.00
+0.00,30-04-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,76.07,26-11-2024,1.00
+1.00,30-04-2024,Amount of Issue Size,Consumer Discretionary,Automobile and Auto Components,Auto Components,53.89,26-11-2024,1.00
+2.00,30-04-2024,Amount of Issue Size,Financial Services,Financial Services,Banks,"1,151.00",26-11-2024,1.00
+3.00,30-04-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Beverages,21.78,26-11-2024,1.00
+4.00,30-04-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,28.04,26-11-2024,1.00
+5.00,30-04-2024,Amount of Issue Size,Industrials,Construction,Construction,565.14,26-11-2024,1.00
+6.00,30-04-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,141.13,26-11-2024,1.00
+7.00,30-04-2024,Amount of Issue Size,Consumer Discretionary,"Media, Entertainment & Publication",Entertainment,14.25,26-11-2024,1.00
+8.00,30-04-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,33.13,26-11-2024,1.00
+9.00,30-04-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,32.10,26-11-2024,1.00
+10.00,30-04-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Software,93.44,26-11-2024,1.00
+11.00,30-04-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,666.32,26-11-2024,1.00
+12.00,30-04-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,134.09,26-11-2024,1.00
+13.00,30-04-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Leisure Services,16.47,26-11-2024,1.00
+14.00,30-04-2024,Amount of Issue Size,Energy,"Oil, Gas & Consumable Fuels",Petroleum Products,12.60,26-11-2024,1.00
+15.00,30-04-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,12.07,26-11-2024,1.00
+16.00,30-04-2024,Amount of Issue Size,Telecommunication,Telecommunication,Telecom - Services,"22,275.00",26-11-2024,1.00
+17.00,30-04-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,44.74,26-11-2024,1.00
+18.00,30-04-2024,Amount of Issue Size,Services,Services,Transport Services,5.60,26-11-2024,1.00
+19.00,31-05-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,54.70,26-11-2024,1.00
+20.00,31-05-2024,Amount of Issue Size,Consumer Discretionary,Automobile and Auto Components,Auto Components,25.25,26-11-2024,1.00
+21.00,31-05-2024,Amount of Issue Size,Commodities,Construction Materials,Cement & Cement Products,400.00,26-11-2024,1.00
+22.00,31-05-2024,Amount of Issue Size,Commodities,Chemicals,Chemicals & Petrochemicals,60.49,26-11-2024,1.00
+23.00,31-05-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,700.17,26-11-2024,1.00
+24.00,31-05-2024,Amount of Issue Size,Industrials,Construction,Construction,23.36,26-11-2024,1.00
+25.00,31-05-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,15.00,26-11-2024,1.00
+26.00,31-05-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,174.63,26-11-2024,1.00
+27.00,31-05-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,"4,271.83",26-11-2024,1.00
+28.00,31-05-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,44.32,26-11-2024,1.00
+29.00,31-05-2024,Amount of Issue Size,Healthcare,Healthcare,Healthcare Equipment & Supplies,12.60,26-11-2024,1.00
+30.00,31-05-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Hardware,35.18,26-11-2024,1.00
+31.00,31-05-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,41.15,26-11-2024,1.00
+32.00,31-05-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,40.96,26-11-2024,1.00
+33.00,31-05-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Leisure Services,"1,550.81",26-11-2024,1.00
+34.00,31-05-2024,Amount of Issue Size,Consumer Discretionary,"Media, Entertainment & Publication",Media,8.48,26-11-2024,1.00
+35.00,31-05-2024,Amount of Issue Size,Others,Others,Others,"4,584.16",26-11-2024,1.00
+36.00,31-05-2024,Amount of Issue Size,Commodities,Forest Materials,"Paper, Forest & Jute Products",45.11,26-11-2024,1.00
+37.00,31-05-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,43.16,26-11-2024,1.00
+38.00,31-05-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Retailing,13.53,26-11-2024,1.00
+39.00,31-05-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,28.87,26-11-2024,1.00
+40.00,31-05-2024,Amount of Issue Size,Services,Services,Transport Infrastructure,28.00,26-11-2024,1.00
+41.00,31-05-2024,Amount of Issue Size,Services,Services,Transport Services,136.65,26-11-2024,1.00
+42.00,30-06-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,86.13,26-11-2024,1.00
+43.00,30-06-2024,Amount of Issue Size,Commodities,Chemicals,Chemicals & Petrochemicals,149.28,26-11-2024,1.00
+44.00,30-06-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,269.47,26-11-2024,1.00
+45.00,30-06-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,633.56,26-11-2024,1.00
+46.00,30-06-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,61.59,26-11-2024,1.00
+47.00,30-06-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,255.05,26-11-2024,1.00
+48.00,30-06-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,42.31,26-11-2024,1.00
+49.00,30-06-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Services,33.22,26-11-2024,1.00
+50.00,30-06-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,505.03,26-11-2024,1.00
+51.00,30-06-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,100.36,26-11-2024,1.00
+52.00,30-06-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Leisure Services,749.23,26-11-2024,1.00
+53.00,30-06-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Other Consumer Services,6.81,26-11-2024,1.00
+54.00,30-06-2024,Amount of Issue Size,Utilities,Utilities,Other Utilities,82.22,26-11-2024,1.00
+55.00,30-06-2024,Amount of Issue Size,Others,Others,Others,540.81,26-11-2024,1.00
+56.00,30-06-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,10.54,26-11-2024,1.00
+57.00,30-06-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,76.39,26-11-2024,1.00
+58.00,31-07-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,561.15,26-11-2024,1.00
+59.00,31-07-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Beverages,"1,500.00",26-11-2024,1.00
+60.00,31-07-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,49.70,26-11-2024,1.00
+61.00,31-07-2024,Amount of Issue Size,Industrials,Construction,Construction,343.74,26-11-2024,1.00
+62.00,31-07-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,28.05,26-11-2024,1.00
+63.00,31-07-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,116.84,26-11-2024,1.00
+64.00,31-07-2024,Amount of Issue Size,Commodities,Chemicals,Fertilizers & Agrochemicals,44.68,26-11-2024,1.00
+65.00,31-07-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,150.92,26-11-2024,1.00
+66.00,31-07-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,12.72,26-11-2024,1.00
+67.00,31-07-2024,Amount of Issue Size,Healthcare,Healthcare,Healthcare Services,41.26,26-11-2024,1.00
+68.00,31-07-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Household Products,24.54,26-11-2024,1.00
+69.00,31-07-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,128.61,26-11-2024,1.00
+70.00,31-07-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,801.15,26-11-2024,1.00
+71.00,31-07-2024,Amount of Issue Size,Utilities,Utilities,Other Utilities,173.69,26-11-2024,1.00
+72.00,31-07-2024,Amount of Issue Size,Others,Others,Others,593.87,26-11-2024,1.00
+73.00,31-07-2024,Amount of Issue Size,Commodities,Forest Materials,"Paper, Forest & Jute Products",39.82,26-11-2024,1.00
+74.00,31-07-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Personal Products,19.46,26-11-2024,1.00
+75.00,31-07-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,"1,952.03",26-11-2024,1.00
+76.00,31-07-2024,Amount of Issue Size,Consumer Discretionary,Realty,Realty,"2,029.48",26-11-2024,1.00
+77.00,31-07-2024,Amount of Issue Size,Telecommunication,Telecommunication,Telecom - Services,749.99,26-11-2024,1.00
+78.00,31-07-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,49.92,26-11-2024,1.00
+79.00,31-08-2024,Amount of Issue Size,Industrials,Capital Goods,Aerospace & Defense,5.58,26-11-2024,1.00
+80.00,31-08-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,19.48,26-11-2024,1.00
+81.00,31-08-2024,Amount of Issue Size,Financial Services,Financial Services,Capital Markets,48.93,26-11-2024,1.00
+82.00,31-08-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,177.17,26-11-2024,1.00
+83.00,31-08-2024,Amount of Issue Size,Industrials,Construction,Construction,"1,972.35",26-11-2024,1.00
+84.00,31-08-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,69.50,26-11-2024,1.00
+85.00,31-08-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,31.37,26-11-2024,1.00
+86.00,31-08-2024,Amount of Issue Size,Commodities,Metals & Mining,Ferrous Metals,24.07,26-11-2024,1.00
+87.00,31-08-2024,Amount of Issue Size,Healthcare,Healthcare,Healthcare Equipment & Supplies,29.23,26-11-2024,1.00
+88.00,31-08-2024,Amount of Issue Size,Healthcare,Healthcare,Healthcare Services,5.78,26-11-2024,1.00
+89.00,31-08-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Services,226.76,26-11-2024,1.00
+90.00,31-08-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Software,299.58,26-11-2024,1.00
+91.00,31-08-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,102.78,26-11-2024,1.00
+92.00,31-08-2024,Amount of Issue Size,Consumer Discretionary,"Media, Entertainment & Publication",Media,18.72,26-11-2024,1.00
+93.00,31-08-2024,Amount of Issue Size,Others,Others,Others,"9,391.07",26-11-2024,1.00
+94.00,31-08-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,"1,856.74",26-11-2024,1.00
+95.00,31-08-2024,Amount of Issue Size,Utilities,Power,Power,48.30,26-11-2024,1.00
+96.00,31-08-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Retailing,"4,197.75",26-11-2024,1.00
+97.00,31-08-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,261.39,26-11-2024,1.00
+98.00,31-08-2024,Amount of Issue Size,Services,Services,Transport Services,77.07,26-11-2024,1.00
+99.00,30-09-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,48.97,26-11-2024,1.00
+100.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Automobile and Auto Components,Auto Components,500.00,26-11-2024,1.00
+101.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Automobile and Auto Components,Automobiles,24.09,26-11-2024,1.00
+102.00,30-09-2024,Amount of Issue Size,Commodities,Chemicals,Chemicals & Petrochemicals,67.36,26-11-2024,1.00
+103.00,30-09-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,142.24,26-11-2024,1.00
+104.00,30-09-2024,Amount of Issue Size,Industrials,Construction,Construction,19.86,26-11-2024,1.00
+105.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,"1,149.15",26-11-2024,1.00
+106.00,30-09-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,"2,848.48",26-11-2024,1.00
+107.00,30-09-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,"7,585.10",26-11-2024,1.00
+108.00,30-09-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,81.94,26-11-2024,1.00
+109.00,30-09-2024,Amount of Issue Size,Healthcare,Healthcare,Healthcare Equipment & Supplies,70.66,26-11-2024,1.00
+110.00,30-09-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Software,33.84,26-11-2024,1.00
+111.00,30-09-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,176.34,26-11-2024,1.00
+112.00,30-09-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,565.38,26-11-2024,1.00
+113.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Leisure Services,19.27,26-11-2024,1.00
+114.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Other Consumer Services,131.40,26-11-2024,1.00
+115.00,30-09-2024,Amount of Issue Size,Utilities,Utilities,Other Utilities,51.20,26-11-2024,1.00
+116.00,30-09-2024,Amount of Issue Size,Others,Others,Others,702.30,26-11-2024,1.00
+117.00,30-09-2024,Amount of Issue Size,Utilities,Power,Power,250.00,26-11-2024,1.00
+118.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Realty,Realty,410.00,26-11-2024,1.00
+119.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Retailing,834.68,26-11-2024,1.00
+120.00,30-09-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,158.14,26-11-2024,1.00
+121.00,30-09-2024,Amount of Issue Size,Services,Services,Transport Services,"1,159.14",26-11-2024,1.00
+122.00,31-10-2024,Amount of Issue Size,Industrials,Capital Goods,Aerospace & Defense,35.90,26-11-2024,1.00
+123.00,31-10-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,12.00,26-11-2024,1.00
+124.00,31-10-2024,Amount of Issue Size,Consumer Discretionary,Automobile and Auto Components,Auto Components,123.32,26-11-2024,1.00
+125.00,31-10-2024,Amount of Issue Size,Commodities,Chemicals,Chemicals & Petrochemicals,81.23,26-11-2024,1.00
+126.00,31-10-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,150.96,26-11-2024,1.00
+127.00,31-10-2024,Amount of Issue Size,Industrials,Construction,Construction,656.91,26-11-2024,1.00
+128.00,31-10-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,"4,519.34",26-11-2024,1.00
+129.00,31-10-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,237.39,26-11-2024,1.00
+130.00,31-10-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,136.97,26-11-2024,1.00
+131.00,31-10-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,45.49,26-11-2024,1.00
+132.00,31-10-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,855.69,26-11-2024,1.00
+133.00,31-10-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Leisure Services,40.14,26-11-2024,1.00
+134.00,31-10-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Other Consumer Services,15.09,26-11-2024,1.00
+135.00,31-10-2024,Amount of Issue Size,Others,Others,Others,"28,534.27",26-11-2024,1.00
+136.00,31-10-2024,Amount of Issue Size,Consumer Discretionary,Realty,Realty,25.90,26-11-2024,1.00
+137.00,31-10-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,151.18,26-11-2024,1.00
+138.00,31-10-2024,Amount of Issue Size,Services,Services,Transport Services,31.47,26-11-2024,1.00
+139.00,30-04-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,2.00,26-11-2024,1.00
+140.00,30-04-2024,No of Issues,Consumer Discretionary,Automobile and Auto Components,Auto Components,1.00,26-11-2024,1.00
+141.00,30-04-2024,No of Issues,Financial Services,Financial Services,Banks,1.00,26-11-2024,1.00
+142.00,30-04-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Beverages,1.00,26-11-2024,1.00
+143.00,30-04-2024,No of Issues,Services,Services,Commercial Services & Supplies,2.00,26-11-2024,1.00
+144.00,30-04-2024,No of Issues,Industrials,Construction,Construction,4.00,26-11-2024,1.00
+145.00,30-04-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,5.00,26-11-2024,1.00
+146.00,30-04-2024,No of Issues,Consumer Discretionary,"Media, Entertainment & Publication",Entertainment,1.00,26-11-2024,1.00
+147.00,30-04-2024,No of Issues,Financial Services,Financial Services,Finance,1.00,26-11-2024,1.00
+148.00,30-04-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,2.00,26-11-2024,1.00
+149.00,30-04-2024,No of Issues,Information Technology,Information Technology,IT - Software,2.00,26-11-2024,1.00
+150.00,30-04-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,3.00,26-11-2024,1.00
+151.00,30-04-2024,No of Issues,Industrials,Capital Goods,Industrial Products,3.00,26-11-2024,1.00
+152.00,30-04-2024,No of Issues,Consumer Discretionary,Consumer Services,Leisure Services,1.00,26-11-2024,1.00
+153.00,30-04-2024,No of Issues,Energy,"Oil, Gas & Consumable Fuels",Petroleum Products,2.00,26-11-2024,1.00
+154.00,30-04-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,1.00,26-11-2024,1.00
+155.00,30-04-2024,No of Issues,Telecommunication,Telecommunication,Telecom - Services,2.00,26-11-2024,1.00
+156.00,30-04-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,1.00,26-11-2024,1.00
+157.00,30-04-2024,No of Issues,Services,Services,Transport Services,1.00,26-11-2024,1.00
+158.00,31-05-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,2.00,26-11-2024,1.00
+159.00,31-05-2024,No of Issues,Consumer Discretionary,Automobile and Auto Components,Auto Components,1.00,26-11-2024,1.00
+160.00,31-05-2024,No of Issues,Commodities,Construction Materials,Cement & Cement Products,1.00,26-11-2024,1.00
+161.00,31-05-2024,No of Issues,Commodities,Chemicals,Chemicals & Petrochemicals,2.00,26-11-2024,1.00
+162.00,31-05-2024,No of Issues,Services,Services,Commercial Services & Supplies,4.00,26-11-2024,1.00
+163.00,31-05-2024,No of Issues,Industrials,Construction,Construction,1.00,26-11-2024,1.00
+164.00,31-05-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,1.00,26-11-2024,1.00
+165.00,31-05-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,1.00,26-11-2024,1.00
+166.00,31-05-2024,No of Issues,Financial Services,Financial Services,Finance,2.00,26-11-2024,1.00
+167.00,31-05-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,2.00,26-11-2024,1.00
+168.00,31-05-2024,No of Issues,Healthcare,Healthcare,Healthcare Equipment & Supplies,1.00,26-11-2024,1.00
+169.00,31-05-2024,No of Issues,Information Technology,Information Technology,IT - Hardware,2.00,26-11-2024,1.00
+170.00,31-05-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,1.00,26-11-2024,1.00
+171.00,31-05-2024,No of Issues,Industrials,Capital Goods,Industrial Products,2.00,26-11-2024,1.00
+172.00,31-05-2024,No of Issues,Consumer Discretionary,Consumer Services,Leisure Services,1.00,26-11-2024,1.00
+173.00,31-05-2024,No of Issues,Consumer Discretionary,"Media, Entertainment & Publication",Media,1.00,26-11-2024,1.00
+174.00,31-05-2024,No of Issues,Others,Others,Others,6.00,26-11-2024,1.00
+175.00,31-05-2024,No of Issues,Commodities,Forest Materials,"Paper, Forest & Jute Products",1.00,26-11-2024,1.00
+176.00,31-05-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,1.00,26-11-2024,1.00
+177.00,31-05-2024,No of Issues,Consumer Discretionary,Consumer Services,Retailing,1.00,26-11-2024,1.00
+178.00,31-05-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,2.00,26-11-2024,1.00
+179.00,31-05-2024,No of Issues,Services,Services,Transport Infrastructure,1.00,26-11-2024,1.00
+180.00,31-05-2024,No of Issues,Services,Services,Transport Services,2.00,26-11-2024,1.00
+181.00,30-06-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,2.00,26-11-2024,1.00
+182.00,30-06-2024,No of Issues,Commodities,Chemicals,Chemicals & Petrochemicals,3.00,26-11-2024,1.00
+183.00,30-06-2024,No of Issues,Services,Services,Commercial Services & Supplies,4.00,26-11-2024,1.00
+184.00,30-06-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,4.00,26-11-2024,1.00
+185.00,30-06-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,2.00,26-11-2024,1.00
+186.00,30-06-2024,No of Issues,Financial Services,Financial Services,Finance,4.00,26-11-2024,1.00
+187.00,30-06-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,1.00,26-11-2024,1.00
+188.00,30-06-2024,No of Issues,Information Technology,Information Technology,IT - Services,2.00,26-11-2024,1.00
+189.00,30-06-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,2.00,26-11-2024,1.00
+190.00,30-06-2024,No of Issues,Industrials,Capital Goods,Industrial Products,2.00,26-11-2024,1.00
+191.00,30-06-2024,No of Issues,Consumer Discretionary,Consumer Services,Leisure Services,2.00,26-11-2024,1.00
+192.00,30-06-2024,No of Issues,Consumer Discretionary,Consumer Services,Other Consumer Services,1.00,26-11-2024,1.00
+193.00,30-06-2024,No of Issues,Utilities,Utilities,Other Utilities,2.00,26-11-2024,1.00
+194.00,30-06-2024,No of Issues,Others,Others,Others,4.00,26-11-2024,1.00
+195.00,30-06-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,1.00,26-11-2024,1.00
+196.00,30-06-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,3.00,26-11-2024,1.00
+197.00,31-07-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,2.00,26-11-2024,1.00
+198.00,31-07-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Beverages,1.00,26-11-2024,1.00
+199.00,31-07-2024,No of Issues,Services,Services,Commercial Services & Supplies,2.00,26-11-2024,1.00
+200.00,31-07-2024,No of Issues,Industrials,Construction,Construction,3.00,26-11-2024,1.00
+201.00,31-07-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,1.00,26-11-2024,1.00
+202.00,31-07-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,2.00,26-11-2024,1.00
+203.00,31-07-2024,No of Issues,Commodities,Chemicals,Fertilizers & Agrochemicals,1.00,26-11-2024,1.00
+204.00,31-07-2024,No of Issues,Financial Services,Financial Services,Finance,4.00,26-11-2024,1.00
+205.00,31-07-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,1.00,26-11-2024,1.00
+206.00,31-07-2024,No of Issues,Healthcare,Healthcare,Healthcare Services,1.00,26-11-2024,1.00
+207.00,31-07-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Household Products,1.00,26-11-2024,1.00
+208.00,31-07-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,3.00,26-11-2024,1.00
+209.00,31-07-2024,No of Issues,Industrials,Capital Goods,Industrial Products,4.00,26-11-2024,1.00
+210.00,31-07-2024,No of Issues,Utilities,Utilities,Other Utilities,3.00,26-11-2024,1.00
+211.00,31-07-2024,No of Issues,Others,Others,Others,7.00,26-11-2024,1.00
+212.00,31-07-2024,No of Issues,Commodities,Forest Materials,"Paper, Forest & Jute Products",1.00,26-11-2024,1.00
+213.00,31-07-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Personal Products,1.00,26-11-2024,1.00
+214.00,31-07-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,1.00,26-11-2024,1.00
+215.00,31-07-2024,No of Issues,Consumer Discretionary,Realty,Realty,2.00,26-11-2024,1.00
+216.00,31-07-2024,No of Issues,Telecommunication,Telecommunication,Telecom - Services,3.00,26-11-2024,1.00
+217.00,31-07-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,1.00,26-11-2024,1.00
+218.00,31-08-2024,No of Issues,Industrials,Capital Goods,Aerospace & Defense,1.00,26-11-2024,1.00
+219.00,31-08-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,1.00,26-11-2024,1.00
+220.00,31-08-2024,No of Issues,Financial Services,Financial Services,Capital Markets,1.00,26-11-2024,1.00
+221.00,31-08-2024,No of Issues,Services,Services,Commercial Services & Supplies,4.00,26-11-2024,1.00
+222.00,31-08-2024,No of Issues,Industrials,Construction,Construction,4.00,26-11-2024,1.00
+223.00,31-08-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,1.00,26-11-2024,1.00
+224.00,31-08-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,1.00,26-11-2024,1.00
+225.00,31-08-2024,No of Issues,Commodities,Metals & Mining,Ferrous Metals,1.00,26-11-2024,1.00
+226.00,31-08-2024,No of Issues,Healthcare,Healthcare,Healthcare Equipment & Supplies,1.00,26-11-2024,1.00
+227.00,31-08-2024,No of Issues,Healthcare,Healthcare,Healthcare Services,1.00,26-11-2024,1.00
+228.00,31-08-2024,No of Issues,Information Technology,Information Technology,IT - Services,2.00,26-11-2024,1.00
+229.00,31-08-2024,No of Issues,Information Technology,Information Technology,IT - Software,2.00,26-11-2024,1.00
+230.00,31-08-2024,No of Issues,Industrials,Capital Goods,Industrial Products,5.00,26-11-2024,1.00
+231.00,31-08-2024,No of Issues,Consumer Discretionary,"Media, Entertainment & Publication",Media,1.00,26-11-2024,1.00
+232.00,31-08-2024,No of Issues,Others,Others,Others,8.00,26-11-2024,1.00
+233.00,31-08-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,1.00,26-11-2024,1.00
+234.00,31-08-2024,No of Issues,Utilities,Power,Power,1.00,26-11-2024,1.00
+235.00,31-08-2024,No of Issues,Consumer Discretionary,Consumer Services,Retailing,2.00,26-11-2024,1.00
+236.00,31-08-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,4.00,26-11-2024,1.00
+237.00,31-08-2024,No of Issues,Services,Services,Transport Services,2.00,26-11-2024,1.00
+238.00,30-09-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,1.00,26-11-2024,1.00
+239.00,30-09-2024,No of Issues,Consumer Discretionary,Automobile and Auto Components,Auto Components,1.00,26-11-2024,1.00
+240.00,30-09-2024,No of Issues,Consumer Discretionary,Automobile and Auto Components,Automobiles,1.00,26-11-2024,1.00
+241.00,30-09-2024,No of Issues,Commodities,Chemicals,Chemicals & Petrochemicals,1.00,26-11-2024,1.00
+242.00,30-09-2024,No of Issues,Services,Services,Commercial Services & Supplies,2.00,26-11-2024,1.00
+243.00,30-09-2024,No of Issues,Industrials,Construction,Construction,1.00,26-11-2024,1.00
+244.00,30-09-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,2.00,26-11-2024,1.00
+245.00,30-09-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,2.00,26-11-2024,1.00
+246.00,30-09-2024,No of Issues,Financial Services,Financial Services,Finance,7.00,26-11-2024,1.00
+247.00,30-09-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,1.00,26-11-2024,1.00
+248.00,30-09-2024,No of Issues,Healthcare,Healthcare,Healthcare Equipment & Supplies,1.00,26-11-2024,1.00
+249.00,30-09-2024,No of Issues,Information Technology,Information Technology,IT - Software,1.00,26-11-2024,1.00
+250.00,30-09-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,2.00,26-11-2024,1.00
+251.00,30-09-2024,No of Issues,Industrials,Capital Goods,Industrial Products,12.00,26-11-2024,1.00
+252.00,30-09-2024,No of Issues,Consumer Discretionary,Consumer Services,Leisure Services,2.00,26-11-2024,1.00
+253.00,30-09-2024,No of Issues,Consumer Discretionary,Consumer Services,Other Consumer Services,2.00,26-11-2024,1.00
+254.00,30-09-2024,No of Issues,Utilities,Utilities,Other Utilities,1.00,26-11-2024,1.00
+255.00,30-09-2024,No of Issues,Others,Others,Others,9.00,26-11-2024,1.00
+256.00,30-09-2024,No of Issues,Utilities,Power,Power,1.00,26-11-2024,1.00
+257.00,30-09-2024,No of Issues,Consumer Discretionary,Realty,Realty,1.00,26-11-2024,1.00
+258.00,30-09-2024,No of Issues,Consumer Discretionary,Consumer Services,Retailing,1.00,26-11-2024,1.00
+259.00,30-09-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,4.00,26-11-2024,1.00
+260.00,30-09-2024,No of Issues,Services,Services,Transport Services,3.00,26-11-2024,1.00
+261.00,31-10-2024,No of Issues,Industrials,Capital Goods,Aerospace & Defense,1.00,26-11-2024,1.00
+262.00,31-10-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,1.00,26-11-2024,1.00
+263.00,31-10-2024,No of Issues,Consumer Discretionary,Automobile and Auto Components,Auto Components,3.00,26-11-2024,1.00
+264.00,31-10-2024,No of Issues,Commodities,Chemicals,Chemicals & Petrochemicals,2.00,26-11-2024,1.00
+265.00,31-10-2024,No of Issues,Services,Services,Commercial Services & Supplies,5.00,26-11-2024,1.00
+266.00,31-10-2024,No of Issues,Industrials,Construction,Construction,5.00,26-11-2024,1.00
+267.00,31-10-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,2.00,26-11-2024,1.00
+268.00,31-10-2024,No of Issues,Financial Services,Financial Services,Finance,4.00,26-11-2024,1.00
+269.00,31-10-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,3.00,26-11-2024,1.00
+270.00,31-10-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,1.00,26-11-2024,1.00
+271.00,31-10-2024,No of Issues,Industrials,Capital Goods,Industrial Products,6.00,26-11-2024,1.00
+272.00,31-10-2024,No of Issues,Consumer Discretionary,Consumer Services,Leisure Services,2.00,26-11-2024,1.00
+273.00,31-10-2024,No of Issues,Consumer Discretionary,Consumer Services,Other Consumer Services,1.00,26-11-2024,1.00
+274.00,31-10-2024,No of Issues,Others,Others,Others,4.00,26-11-2024,1.00
+275.00,31-10-2024,No of Issues,Consumer Discretionary,Realty,Realty,1.00,26-11-2024,1.00
+276.00,31-10-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,4.00,26-11-2024,1.00
+277.00,31-10-2024,No of Issues,Services,Services,Transport Services,2.00,26-11-2024,1.00
+0.00,30-11-2024,Amount of Issue Size,Financial Services,Financial Services,Capital Markets,199.28,17-01-2025,1.00
+1.00,30-11-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,58.44,17-01-2025,1.00
+2.00,30-11-2024,Amount of Issue Size,Industrials,Construction,Construction,"5,430.00",17-01-2025,1.00
+3.00,30-11-2024,Amount of Issue Size,Consumer Discretionary,Consumer Durables,Consumer Durables,61.20,17-01-2025,1.00
+4.00,30-11-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Services,"2,155.26",17-01-2025,1.00
+5.00,30-11-2024,Amount of Issue Size,Others,Others,Others,"6,865.02",17-01-2025,1.00
+6.00,30-11-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,29.34,17-01-2025,1.00
+7.00,30-11-2024,Amount of Issue Size,Utilities,Power,Power,"10,000.00",17-01-2025,1.00
+8.00,30-11-2024,Amount of Issue Size,Consumer Discretionary,Realty,Realty,47.03,17-01-2025,1.00
+9.00,30-11-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Retailing,"11,327.43",17-01-2025,1.00
+10.00,30-11-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,92.50,17-01-2025,1.00
+11.00,31-12-2024,Amount of Issue Size,Industrials,Capital Goods,Aerospace & Defense,599.07,17-01-2025,1.00
+12.00,31-12-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,74.69,17-01-2025,1.00
+13.00,31-12-2024,Amount of Issue Size,Consumer Discretionary,Automobile and Auto Components,Auto Components,"1,250.00",17-01-2025,1.00
+14.00,31-12-2024,Amount of Issue Size,Financial Services,Financial Services,Capital Markets,840.25,17-01-2025,1.00
+15.00,31-12-2024,Amount of Issue Size,Commodities,Chemicals,Chemicals & Petrochemicals,2.94,17-01-2025,1.00
+16.00,31-12-2024,Amount of Issue Size,Services,Services,Commercial Services & Supplies,"4,375.96",17-01-2025,1.00
+17.00,31-12-2024,Amount of Issue Size,Industrials,Construction,Construction,118.60,17-01-2025,1.00
+18.00,31-12-2024,Amount of Issue Size,Industrials,Capital Goods,Electrical Equipment,948.92,17-01-2025,1.00
+19.00,31-12-2024,Amount of Issue Size,Consumer Discretionary,"Media, Entertainment & Publication",Entertainment,19.95,17-01-2025,1.00
+20.00,31-12-2024,Amount of Issue Size,Commodities,Chemicals,Fertilizers & Agrochemicals,"3,376.53",17-01-2025,1.00
+21.00,31-12-2024,Amount of Issue Size,Financial Services,Financial Services,Finance,141.90,17-01-2025,1.00
+22.00,31-12-2024,Amount of Issue Size,Financial Services,Financial Services,Financial Technology (Fintech),572.00,17-01-2025,1.00
+23.00,31-12-2024,Amount of Issue Size,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,47.42,17-01-2025,1.00
+24.00,31-12-2024,Amount of Issue Size,Healthcare,Healthcare,Healthcare Services,846.25,17-01-2025,1.00
+25.00,31-12-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Services,"2,497.92",17-01-2025,1.00
+26.00,31-12-2024,Amount of Issue Size,Information Technology,Information Technology,IT - Software,26.80,17-01-2025,1.00
+27.00,31-12-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Manufacturing,179.35,17-01-2025,1.00
+28.00,31-12-2024,Amount of Issue Size,Industrials,Capital Goods,Industrial Products,128.65,17-01-2025,1.00
+29.00,31-12-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Leisure Services,"1,629.42",17-01-2025,1.00
+30.00,31-12-2024,Amount of Issue Size,Consumer Discretionary,"Media, Entertainment & Publication",Media,58.06,17-01-2025,1.00
+31.00,31-12-2024,Amount of Issue Size,Utilities,Utilities,Other Utilities,500.32,17-01-2025,1.00
+32.00,31-12-2024,Amount of Issue Size,Others,Others,Others,735.05,17-01-2025,1.00
+33.00,31-12-2024,Amount of Issue Size,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,"3,624.73",17-01-2025,1.00
+34.00,31-12-2024,Amount of Issue Size,Consumer Discretionary,Consumer Services,Retailing,"8,000.00",17-01-2025,1.00
+35.00,31-12-2024,Amount of Issue Size,Consumer Discretionary,Textiles,Textiles & Apparels,582.81,17-01-2025,1.00
+36.00,30-11-2024,No of Issues,Financial Services,Financial Services,Capital Markets,1.00,17-01-2025,1.00
+37.00,30-11-2024,No of Issues,Services,Services,Commercial Services & Supplies,2.00,17-01-2025,1.00
+38.00,30-11-2024,No of Issues,Industrials,Construction,Construction,1.00,17-01-2025,1.00
+39.00,30-11-2024,No of Issues,Consumer Discretionary,Consumer Durables,Consumer Durables,1.00,17-01-2025,1.00
+40.00,30-11-2024,No of Issues,Information Technology,Information Technology,IT - Services,2.00,17-01-2025,1.00
+41.00,30-11-2024,No of Issues,Others,Others,Others,4.00,17-01-2025,1.00
+42.00,30-11-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,1.00,17-01-2025,1.00
+43.00,30-11-2024,No of Issues,Utilities,Power,Power,1.00,17-01-2025,1.00
+44.00,30-11-2024,No of Issues,Consumer Discretionary,Realty,Realty,1.00,17-01-2025,1.00
+45.00,30-11-2024,No of Issues,Consumer Discretionary,Consumer Services,Retailing,1.00,17-01-2025,1.00
+46.00,30-11-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,3.00,17-01-2025,1.00
+47.00,31-12-2024,No of Issues,Industrials,Capital Goods,Aerospace & Defense,2.00,17-01-2025,1.00
+48.00,31-12-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Agricultural Food & other Products,3.00,17-01-2025,1.00
+49.00,31-12-2024,No of Issues,Consumer Discretionary,Automobile and Auto Components,Auto Components,1.00,17-01-2025,1.00
+50.00,31-12-2024,No of Issues,Financial Services,Financial Services,Capital Markets,1.00,17-01-2025,1.00
+51.00,31-12-2024,No of Issues,Commodities,Chemicals,Chemicals & Petrochemicals,1.00,17-01-2025,1.00
+52.00,31-12-2024,No of Issues,Services,Services,Commercial Services & Supplies,5.00,17-01-2025,1.00
+53.00,31-12-2024,No of Issues,Industrials,Construction,Construction,3.00,17-01-2025,1.00
+54.00,31-12-2024,No of Issues,Industrials,Capital Goods,Electrical Equipment,2.00,17-01-2025,1.00
+55.00,31-12-2024,No of Issues,Consumer Discretionary,"Media, Entertainment & Publication",Entertainment,1.00,17-01-2025,1.00
+56.00,31-12-2024,No of Issues,Commodities,Chemicals,Fertilizers & Agrochemicals,1.00,17-01-2025,1.00
+57.00,31-12-2024,No of Issues,Financial Services,Financial Services,Finance,3.00,17-01-2025,1.00
+58.00,31-12-2024,No of Issues,Financial Services,Financial Services,Financial Technology (Fintech),1.00,17-01-2025,1.00
+59.00,31-12-2024,No of Issues,Fast Moving Consumer Goods,Fast Moving Consumer Goods,Food Products,1.00,17-01-2025,1.00
+60.00,31-12-2024,No of Issues,Healthcare,Healthcare,Healthcare Services,1.00,17-01-2025,1.00
+61.00,31-12-2024,No of Issues,Information Technology,Information Technology,IT - Services,1.00,17-01-2025,1.00
+62.00,31-12-2024,No of Issues,Information Technology,Information Technology,IT - Software,1.00,17-01-2025,1.00
+63.00,31-12-2024,No of Issues,Industrials,Capital Goods,Industrial Manufacturing,1.00,17-01-2025,1.00
+64.00,31-12-2024,No of Issues,Industrials,Capital Goods,Industrial Products,3.00,17-01-2025,1.00
+65.00,31-12-2024,No of Issues,Consumer Discretionary,Consumer Services,Leisure Services,2.00,17-01-2025,1.00
+66.00,31-12-2024,No of Issues,Consumer Discretionary,"Media, Entertainment & Publication",Media,2.00,17-01-2025,1.00
+67.00,31-12-2024,No of Issues,Utilities,Utilities,Other Utilities,1.00,17-01-2025,1.00
+68.00,31-12-2024,No of Issues,Others,Others,Others,8.00,17-01-2025,1.00
+69.00,31-12-2024,No of Issues,Healthcare,Healthcare,Pharmaceuticals & Biotechnology,2.00,17-01-2025,1.00
+70.00,31-12-2024,No of Issues,Consumer Discretionary,Consumer Services,Retailing,1.00,17-01-2025,1.00
+71.00,31-12-2024,No of Issues,Consumer Discretionary,Textiles,Textiles & Apparels,2.00,17-01-2025,1.00
