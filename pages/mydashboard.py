@@ -351,7 +351,7 @@ param2 = st.radio('Select Currency', param2_options, index=1)
 
 file_path_fpi = r"files/dash_fpi.csv"
 df1 = pd.read_csv(file_path_fpi)[:-1]
-df1.iloc[:,1:] = df1.iloc[:,1:].apply(pd.to_numeric,errors='coerce')
+df1.iloc[:,1:] = round(df1.iloc[:,1:].apply(pd.to_numeric,errors='coerce'),0)
 
 df1['Month1'] = pd.to_datetime(df1["Month"], dayfirst=True)
 last_date = df1['Month1'].max()
