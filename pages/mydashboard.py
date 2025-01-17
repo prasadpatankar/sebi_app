@@ -95,7 +95,394 @@ def to_financial_year(date):
 
   return financial_year
 
+#################################################
+# Main content
+st.title('Primary Market Section')
 
+param8_options = ['Month', 'Calendar Year', 'Financial Year']
+param8 = st.radio('Select Time Period', param8_options, index=0)
+
+
+# --- Get Table ID ---
+table_id = "PM_m_08"
+filepath = r"files/PM_m_08.csv"
+
+# --- Display Table ---
+
+df = pd.read_csv(filepath, index_col=0)  # Read the CSV
+df = df.reset_index()
+for x in df.columns:
+    if x=="Upload_Date":
+        df = df.drop(x, axis=1)
+    if x=="rank":
+        df = df.drop(x, axis=1)  
+data = df.replace(np.nan,"")
+
+
+categorical_cols = ['segment1','Type_Issue1','Sector']
+
+
+unique_values = {}
+for col in categorical_cols:
+    unique_values[col] = list(data[col].unique())
+
+# Create filter text boxes with auto-prompt
+num_cols = 3
+cols = st.columns(num_cols)  # Create 3 columns
+
+# Counter for iterating through columns
+col_index = 0
+
+filters = {}
+for column, unique_vals in unique_values.items():
+    with cols[col_index % num_cols]:  # Use modulo to cycle through columns
+        selected_values = st.multiselect(
+            f"Filter {column}:",
+            unique_vals,
+            key=f"multiselect_{column}"
+        )
+        filters[column] = selected_values
+    col_index += 1  # Increment column index
+#"""Filters the DataFrame based on the provided filter dictionary."""
+filtered_PM = data.copy()
+for column, values in filters.items():
+    if values:  # Check if there are any filter values for this column
+        filtered_PM = filtered_PM[filtered_PM[column].isin(values)]
+
+if param8 == 'Month':
+    summary_PM = filtered_PM.groupby(['Calender_Month']).agg({"Issue_Size":['sum','count']})
+elif param8 == 'Financial Year':
+    # Implement logic to group by financial year
+    summary_PM = filtered_PM.groupby(['Financial_Year']).agg({"Issue_Size":['sum','count']})
+elif param8 == 'Calendar Year':
+    summary_PM = filtered_PM.groupby(['Calender_Year']).agg({"Issue_Size":['sum','count']})
+
+
+summary_PM1 = summary_PM.reset_index().iloc[-12:]
+summary_PM1.columns = ["Period","Issue_Size","No_Issues"]
+
+col15, col16 = st.columns(2)
+
+with col15:
+  fig_IPO = go.Figure()
+  fig_IPO.add_trace(
+      go.Bar(
+          x=summary_PM1['Period'],
+          y=summary_PM1['Issue_Size'],
+          name='AUM',  # Consistent naming
+          marker_color= "dodgerblue",#px.colors.qualitative.Bold[5]
+          text=np.round(summary_PM1['Issue_Size'], 0),  # Text for data points
+          textposition='outside',
+          textfont=dict(color="Purple", size=15)
+      )
+  )
+  # Update layout with similar properties
+  fig_IPO.update_layout(
+      title={
+          'text': 'Resources Mobilised (Amt in Rs Crore)',
+          'y': 0.95,
+          'x': 0.5,
+          'xanchor': 'center',
+          'yanchor': 'top',
+          'font': dict(size=20)
+      },
+      showlegend=False,  # Remove legend since there's only one trace
+      plot_bgcolor='white',
+      height=500,
+      yaxis=dict(
+          range=[ 0,  max(summary_PM1['Issue_Size'])*1.07],  # Adjust based on data
+          gridcolor='lightgray',
+          zerolinecolor='lightgray',
+          tickformat='.1f'
+      ),
+      xaxis_title="",
+      margin=dict(r=50)
+  )
+  st.plotly_chart(fig_IPO)
+  with st.expander("View &download data "):
+      st.dataframe(summary_PM1)
+
+
+with col16:
+  fig_IPO1 = go.Figure()
+  fig_IPO1.add_trace(
+      go.Bar(
+          x=summary_PM1['Period'],
+          y=summary_PM1['No_Issues'],
+          name='AUM',  # Consistent naming
+          marker_color="gray",#px.colors.qualitative.Bold[5]
+          text=np.round(summary_PM1['No_Issues'], 0),  # Text for data points
+          textposition='outside',
+          textfont=dict(color="gray", size=15)
+      )
+  )
+  # Update layout with similar properties
+  fig_IPO1.update_layout(
+      title={
+          'text': 'Resources Mobilised (No of Issues)',
+          'y': 0.95,
+          'x': 0.5,
+          'xanchor': 'center',
+          'yanchor': 'top',
+          'font': dict(size=20)
+      },
+      showlegend=False,  # Remove legend since there's only one trace
+      plot_bgcolor='white',
+      height=500,
+      yaxis=dict(
+          range=[ 0,  max(summary_PM1['No_Issues'])*1.07],  # Adjust based on data
+          gridcolor='lightgray',
+          zerolinecolor='lightgray',
+          tickformat='.1f'
+      ),
+      xaxis_title="",
+      margin=dict(r=50)
+  )
+  st.plotly_chart(fig_IPO1)
+
+
+##################################################
+st.title('FPI Section')
+
+# Create radio buttons using st.radio
+param2 = "INR"
+param1_options = ['Month', 'Financial Year', 'Calendar Year']
+param2_options = ['USD', 'INR']
+param1 = st.radio('Select Time Period', param1_options, index=1)
+param2 = st.radio('Select Currency', param2_options, index=1)
+
+file_path_fpi = r"files/dash_fpi.csv"
+df1 = pd.read_csv(file_path_fpi)[:-1]
+df1.iloc[:,1:] = round(df1.iloc[:,1:].apply(pd.to_numeric,errors='coerce'),0)
+
+df1['Month1'] = pd.to_datetime(df1["Month"], dayfirst=True)
+last_date = df1['Month1'].max()
+df1['Month'] = df1['Month1']  + MonthEnd(0)
+df1= df1.drop("Month1", axis=1)
+all_fpi_cols = list(df1.columns)[1:]
+df1['Financial Year'] = df1['Month'].apply(to_financial_year)            
+df1['Calendar Year'] = df1['Month'].dt.year 
+
+text2 = None
+if param2=="USD":
+    text2 = "(Amount in USD Million)"
+else:
+    text2 = "(Amount in Rupees Crore)"
+df2= pd.DataFrame()
+# Filter DataFrame based on parameters
+if param1 == 'Month':
+    df2 = df1.groupby(['Month'])[all_fpi_cols].sum().reset_index()
+elif param1 == 'Financial Year':
+    # Implement logic to group by financial year
+    df2 = df1.groupby(['Financial Year'])[all_fpi_cols].sum().reset_index()
+elif param1 == 'Calendar Year':
+    df2 = df1.groupby(['Calendar Year'])[all_fpi_cols].sum().reset_index()
+
+col10, col11 = st.columns(2)
+with col10:
+    if param2=="INR":
+        selected_columns =  [col for col in all_fpi_cols if ('Equity' in col) and ("INR" in col)] 
+    else:
+        selected_columns =  [col for col in all_fpi_cols if ('Equity' in col) and ("USD" in col)] 
+    selected_columns_all = [param1] +  selected_columns
+    df2a= df2.iloc[-13:]
+    x_values = df2a[param1].astype('str')
+    y_values = df2a[selected_columns[0]]
+    fig4 = go.Figure()
+    fig4.add_trace(
+        go.Bar(
+            x=x_values,
+            y=y_values,
+            name=column,
+            marker_color="darkgreen",
+            text=np.round(y_values,0),
+            textposition='outside',
+            textfont = dict(color="darkgreen", size=15)
+        ))
+    fig4.update_layout(
+        title={
+            'text': f'Trends in FPI Investment- Equity\n {text2}',
+            'y': 0.95,
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top',
+            'font': dict(size=20)
+        },
+        showlegend=False,
+        plot_bgcolor='white',
+        height=500,
+        yaxis=dict(
+        range=[1.15*min(y_values), 1.15*max(y_values)],
+        gridcolor='lightgray',
+        zerolinecolor='lightgray',
+        tickformat='.1f'),
+        xaxis_title="",
+        margin=dict(r=50)
+        #yaxis_title="Amount"
+        )
+    st.plotly_chart(fig4, use_container_width=True)
+    st.write(f"Notes: data updated till {last_date.strftime(format='%B %d, %Y')}")
+    with st.expander("View &download data "):
+        st.dataframe(df2)
+
+with col11:
+    if param2=="INR":
+        selected_columns =  [col for col in all_fpi_cols if ('Debt' in col) and ("INR" in col)] 
+    else:
+        selected_columns =  [col for col in all_fpi_cols if ('Debt' in col) and ("USD" in col)] 
+    selected_columns_all = [param1] +  selected_columns
+
+    df2b= df2.iloc[-13:]
+    x_values = df2b[param1].astype('str')
+    y_values = df2b[selected_columns[0]]
+
+    fig5 = go.Figure()
+    fig5.add_trace(
+        go.Bar(
+            x=x_values,
+            y=y_values,
+            name=column,
+            marker_color="royalblue",
+            text=np.round(y_values,0),
+            textposition='outside',
+            textfont = dict(color="royalblue", size=15)
+        ))
+    fig5.update_layout(
+        title={
+            'text': f'Trends in FPI Investment- Debt\n {text2}',
+            'y': 0.95,
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top',
+            'font': dict(size=20)
+        },
+        showlegend=False,
+        plot_bgcolor='white',
+        height=500,
+        yaxis=dict(
+        range=[1.15*min(y_values), 1.15*max(y_values)],
+        gridcolor='lightgray',
+        zerolinecolor='lightgray',
+        tickformat='.1f'),
+        xaxis_title="",
+        margin=dict(r=50)
+        #yaxis_title="Amount"
+        )
+    st.plotly_chart(fig5, use_container_width=True)
+    st.write(f"Notes: data updated till {last_date.strftime(format='%B %d, %Y')}")
+    with st.expander("View &download data "):
+        st.dataframe(df2)
+
+
+# Main content
+st.title('Mutual Funds Section')
+
+# Create a 2x2 grid layout for visualizations
+col8, col9 = st.columns(2)
+# Correct file path
+file_path_mf2 = r"files/MF_m_02.csv"
+
+## Read Data
+Table_Name = "MF_m_02"
+db="defaultdb"
+host="prasadmysql-sebidatabase1.b.aivencloud.com"
+password="AVNS_5gFFh3T1VBzgguK4J2W"
+port="12352"
+user="avnadmin"
+sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
+engine = create_engine(sql_query)
+query = f"SELECT * FROM {Table_Name}"
+df = pd.read_sql_query(query, engine).iloc[-12:]
+
+#df = pd.read_csv(file_path_mf2).iloc[-12:]
+df['Net_AUM'] = df['Net_AUM'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
+df['No_Folios'] = df['No_Folios'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e7
+df['Month'] = pd.to_datetime(df['Month']).dt.strftime("%b %Y")
+
+# Visualization 1: Bar Chart for Number of Orders by Quarter and Type
+with col8:
+  # Standard title with formatting
+  #st.subheader('Number of MF Folios (in Crore)')
+  # Create Figure with similar elements as fig5
+  fig_folios = go.Figure()
+  fig_folios.add_trace(
+      go.Bar(
+          x=df['Month'],
+          y=df['No_Folios'],
+          name='Number of Folios',  # Consistent naming
+          marker_color=px.colors.qualitative.Bold[2],
+          text=np.round(df['No_Folios'], 1),  # Text for data points
+          textposition='outside',
+          textfont=dict(color="royalblue", size=15)
+      )
+  )
+
+  # Update layout with similar properties
+  fig_folios.update_layout(
+      title={
+          'text': 'Number of MF Folios (in Crore)',
+          'y': 0.95,
+          'x': 0.5,
+          'xanchor': 'center',
+          'yanchor': 'top',
+          'font': dict(size=20)
+      },
+      showlegend=False,  # Remove legend since there's only one trace
+      plot_bgcolor='white',
+      height=500,
+      yaxis=dict(
+          range=[ min(df['No_Folios'])-3,  max(df['No_Folios'])+2],  # Adjust based on data
+          gridcolor='lightgray',
+          zerolinecolor='lightgray',
+          tickformat='.1f'
+      ),
+      xaxis_title="",
+      margin=dict(r=50)
+      #yaxis_title="Amount"
+  )
+  st.plotly_chart(fig_folios)
+
+# Visualization 1: Bar Chart for Number of Orders by Quarter and Type
+with col9:
+  fig_AUM = go.Figure()
+  fig_AUM.add_trace(
+      go.Bar(
+          x=df['Month'],
+          y=df['Net_AUM'],
+          name='AUM',  # Consistent naming
+          marker_color=px.colors.qualitative.Bold[4],
+          text=np.round(df['Net_AUM'], 1),  # Text for data points
+          textposition='outside',
+          textfont=dict(color="royalblue", size=15)
+      )
+  )
+
+  # Update layout with similar properties
+  fig_AUM.update_layout(
+      title={
+          'text': 'MF AUM (in Rs Lakh Crore)',
+          'y': 0.95,
+          'x': 0.5,
+          'xanchor': 'center',
+          'yanchor': 'top',
+          'font': dict(size=20)
+      },
+      showlegend=False,  # Remove legend since there's only one trace
+      plot_bgcolor='white',
+      height=500,
+      yaxis=dict(
+          range=[ min(df['Net_AUM'])-3,  max(df['Net_AUM'])+2],  # Adjust based on data
+          gridcolor='lightgray',
+          zerolinecolor='lightgray',
+          tickformat='.1f'
+      ),
+      xaxis_title="",
+      margin=dict(r=50)
+  )
+  st.plotly_chart(fig_AUM)
+
+
+##################################################
 st.title('Market Returns & CAGR')
 # Load and process all datasets
 dataset_files = ['Global Indices', 'Commodities_Currency', 'India Sectoral Indices']
@@ -338,244 +725,4 @@ if True:
         st.write(f"Notes: data updated till {end_date.strftime(format='%B %d, %Y')}")   
         with st.expander("View &download data "):
             st.dataframe(cagr_data)
-
-# Main content
-st.title('FPI Section')
-
-# Create radio buttons using st.radio
-param2 = "INR"
-param1_options = ['Month', 'Financial Year', 'Calendar Year']
-param2_options = ['USD', 'INR']
-param1 = st.radio('Select Time Period', param1_options, index=1)
-param2 = st.radio('Select Currency', param2_options, index=1)
-
-file_path_fpi = r"files/dash_fpi.csv"
-df1 = pd.read_csv(file_path_fpi)[:-1]
-df1.iloc[:,1:] = round(df1.iloc[:,1:].apply(pd.to_numeric,errors='coerce'),0)
-
-df1['Month1'] = pd.to_datetime(df1["Month"], dayfirst=True)
-last_date = df1['Month1'].max()
-df1['Month'] = df1['Month1']  + MonthEnd(0)
-df1= df1.drop("Month1", axis=1)
-all_fpi_cols = list(df1.columns)[1:]
-df1['Financial Year'] = df1['Month'].apply(to_financial_year)            
-df1['Calendar Year'] = df1['Month'].dt.year 
-
-text2 = None
-if param2=="USD":
-    text2 = "(Amount in USD Million)"
-else:
-    text2 = "(Amount in Rupees Crore)"
-df2= pd.DataFrame()
-# Filter DataFrame based on parameters
-if param1 == 'Month':
-    df2 = df1.groupby(['Month'])[all_fpi_cols].sum().reset_index()
-elif param1 == 'Financial Year':
-    # Implement logic to group by financial year
-    df2 = df1.groupby(['Financial Year'])[all_fpi_cols].sum().reset_index()
-elif param1 == 'Calendar Year':
-    df2 = df1.groupby(['Calendar Year'])[all_fpi_cols].sum().reset_index()
-
-col10, col11 = st.columns(2)
-with col10:
-    if param2=="INR":
-        selected_columns =  [col for col in all_fpi_cols if ('Equity' in col) and ("INR" in col)] 
-    else:
-        selected_columns =  [col for col in all_fpi_cols if ('Equity' in col) and ("USD" in col)] 
-    selected_columns_all = [param1] +  selected_columns
-    df2a= df2.iloc[-13:]
-    x_values = df2a[param1].astype('str')
-    y_values = df2a[selected_columns[0]]
-    fig4 = go.Figure()
-    fig4.add_trace(
-        go.Bar(
-            x=x_values,
-            y=y_values,
-            name=column,
-            marker_color="darkgreen",
-            text=np.round(y_values,0),
-            textposition='outside',
-            textfont = dict(color="darkgreen", size=15)
-        ))
-    fig4.update_layout(
-        title={
-            'text': f'Trends in FPI Investment- Equity\n {text2}',
-            'y': 0.95,
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top',
-            'font': dict(size=20)
-        },
-        showlegend=False,
-        plot_bgcolor='white',
-        height=500,
-        yaxis=dict(
-        range=[1.15*min(y_values), 1.15*max(y_values)],
-        gridcolor='lightgray',
-        zerolinecolor='lightgray',
-        tickformat='.1f'),
-        xaxis_title="",
-        margin=dict(r=50)
-        #yaxis_title="Amount"
-        )
-    st.plotly_chart(fig4, use_container_width=True)
-    st.write(f"Notes: data updated till {last_date.strftime(format='%B %d, %Y')}")
-    with st.expander("View &download data "):
-        st.dataframe(df2)
-
-with col11:
-    if param2=="INR":
-        selected_columns =  [col for col in all_fpi_cols if ('Debt' in col) and ("INR" in col)] 
-    else:
-        selected_columns =  [col for col in all_fpi_cols if ('Debt' in col) and ("USD" in col)] 
-    selected_columns_all = [param1] +  selected_columns
-
-    df2b= df2.iloc[-13:]
-    x_values = df2b[param1].astype('str')
-    y_values = df2b[selected_columns[0]]
-
-    fig5 = go.Figure()
-    fig5.add_trace(
-        go.Bar(
-            x=x_values,
-            y=y_values,
-            name=column,
-            marker_color="royalblue",
-            text=np.round(y_values,0),
-            textposition='outside',
-            textfont = dict(color="royalblue", size=15)
-        ))
-    fig5.update_layout(
-        title={
-            'text': f'Trends in FPI Investment- Debt\n {text2}',
-            'y': 0.95,
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top',
-            'font': dict(size=20)
-        },
-        showlegend=False,
-        plot_bgcolor='white',
-        height=500,
-        yaxis=dict(
-        range=[1.15*min(y_values), 1.15*max(y_values)],
-        gridcolor='lightgray',
-        zerolinecolor='lightgray',
-        tickformat='.1f'),
-        xaxis_title="",
-        margin=dict(r=50)
-        #yaxis_title="Amount"
-        )
-    st.plotly_chart(fig5, use_container_width=True)
-    st.write(f"Notes: data updated till {last_date.strftime(format='%B %d, %Y')}")
-    with st.expander("View &download data "):
-        st.dataframe(df2)
-
-
-# Main content
-st.title('Mutual Funds Section')
-
-# Create a 2x2 grid layout for visualizations
-col8, col9 = st.columns(2)
-# Correct file path
-file_path_mf2 = r"files/MF_m_02.csv"
-
-## Read Data
-Table_Name = "MF_m_02"
-db="defaultdb"
-host="prasadmysql-sebidatabase1.b.aivencloud.com"
-password="AVNS_5gFFh3T1VBzgguK4J2W"
-port="12352"
-user="avnadmin"
-sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
-engine = create_engine(sql_query)
-query = f"SELECT * FROM {Table_Name}"
-df = pd.read_sql_query(query, engine).iloc[-12:]
-
-#df = pd.read_csv(file_path_mf2).iloc[-12:]
-df['Net_AUM'] = df['Net_AUM'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
-df['No_Folios'] = df['No_Folios'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e7
-df['Month'] = pd.to_datetime(df['Month']).dt.strftime("%b %Y")
-
-# Visualization 1: Bar Chart for Number of Orders by Quarter and Type
-with col8:
-  # Standard title with formatting
-  #st.subheader('Number of MF Folios (in Crore)')
-  # Create Figure with similar elements as fig5
-  fig_folios = go.Figure()
-  fig_folios.add_trace(
-      go.Bar(
-          x=df['Month'],
-          y=df['No_Folios'],
-          name='Number of Folios',  # Consistent naming
-          marker_color=px.colors.qualitative.Bold[2],
-          text=np.round(df['No_Folios'], 1),  # Text for data points
-          textposition='outside',
-          textfont=dict(color="royalblue", size=15)
-      )
-  )
-
-  # Update layout with similar properties
-  fig_folios.update_layout(
-      title={
-          'text': 'Number of MF Folios (in Crore)',
-          'y': 0.95,
-          'x': 0.5,
-          'xanchor': 'center',
-          'yanchor': 'top',
-          'font': dict(size=20)
-      },
-      showlegend=False,  # Remove legend since there's only one trace
-      plot_bgcolor='white',
-      height=500,
-      yaxis=dict(
-          range=[ min(df['No_Folios'])-3,  max(df['No_Folios'])+2],  # Adjust based on data
-          gridcolor='lightgray',
-          zerolinecolor='lightgray',
-          tickformat='.1f'
-      ),
-      xaxis_title="",
-      margin=dict(r=50)
-      #yaxis_title="Amount"
-  )
-  st.plotly_chart(fig_folios)
-
-# Visualization 1: Bar Chart for Number of Orders by Quarter and Type
-with col9:
-  fig_AUM = go.Figure()
-  fig_AUM.add_trace(
-      go.Bar(
-          x=df['Month'],
-          y=df['Net_AUM'],
-          name='AUM',  # Consistent naming
-          marker_color=px.colors.qualitative.Bold[4],
-          text=np.round(df['Net_AUM'], 1),  # Text for data points
-          textposition='outside',
-          textfont=dict(color="royalblue", size=15)
-      )
-  )
-
-  # Update layout with similar properties
-  fig_AUM.update_layout(
-      title={
-          'text': 'MF AUM (in Rs Lakh Crore)',
-          'y': 0.95,
-          'x': 0.5,
-          'xanchor': 'center',
-          'yanchor': 'top',
-          'font': dict(size=20)
-      },
-      showlegend=False,  # Remove legend since there's only one trace
-      plot_bgcolor='white',
-      height=500,
-      yaxis=dict(
-          range=[ min(df['Net_AUM'])-3,  max(df['Net_AUM'])+2],  # Adjust based on data
-          gridcolor='lightgray',
-          zerolinecolor='lightgray',
-          tickformat='.1f'
-      ),
-      xaxis_title="",
-      margin=dict(r=50)
-  )
-  st.plotly_chart(fig_AUM)
 
