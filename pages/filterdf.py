@@ -38,25 +38,7 @@ if table_names.size > 0:  # Check if any tables exist for the selected category
     
     # --- Display Table ---
     try:
-
-        table_list = ["PM_m_03","PM_m_04","PM_m_05","PM_m_06","PM_m_07", "PM_m_08",]
-
-        df= pd.DataFrame()
-        if table_id in table_list:
-            ## Read Data
-            Table_Name = table_id
-            db="defaultdb"
-            host="prasadmysql-sebidatabase1.b.aivencloud.com"
-            password="AVNS_5gFFh3T1VBzgguK4J2W"
-            port="12352"
-            user="avnadmin"
-            sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
-            engine = create_engine(sql_query)
-            query = f"SELECT * FROM {Table_Name}"
-            df = pd.read_sql_query(query, engine)#.iloc[-12:]
-        else:
-
-            df = pd.read_csv(filepath, index_col=0)  # Read the CSV
+        df = pd.read_csv(filepath, index_col=0)  # Read the CSV
         df = df.reset_index()
         for x in df.columns:
             if x=="Upload_Date":
