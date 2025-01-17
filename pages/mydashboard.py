@@ -358,7 +358,7 @@ df1= df1.drop("Month1", axis=1)
 all_fpi_cols = list(df1.columns)[1:]
 df1['Financial Year'] = df1['Month'].apply(to_financial_year)            
 df1['Calendar Year'] = df1['Month'].dt.year 
-
+df1[all_fpi_cols] = pd.to_numeric(df1[all_fpi_cols], errors="coerce")
 text2 = None
 if param2=="USD":
     text2 = "(Amount in USD Million)"
@@ -408,7 +408,7 @@ with col10:
         plot_bgcolor='white',
         height=500,
         yaxis=dict(
-        #range=[1.15*min(y_values), 1.15*max(y_values)],
+        range=[1.15*min(y_values), 1.15*max(y_values)],
         gridcolor='lightgray',
         zerolinecolor='lightgray',
         tickformat='.1f'),
