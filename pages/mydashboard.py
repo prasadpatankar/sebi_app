@@ -160,6 +160,9 @@ elif param8 == 'Calendar Year':
 
 summary_PM1 = summary_PM.reset_index().iloc[-12:]
 summary_PM1.columns = ["Period","Issue_Size","No_Issues"]
+if param8 == 'Month':
+    summary_PM1['Period'] = pd.to_datetime(summary_PM1['Period'], dayfirst=True).dt.strftime("%b %Y")
+
 
 col15, col16 = st.columns(2)
 
