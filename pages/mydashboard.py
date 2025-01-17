@@ -351,6 +351,8 @@ param2 = st.radio('Select Currency', param2_options, index=1)
 
 file_path_fpi = r"files/dash_fpi.csv"
 df1 = pd.read_csv(file_path_fpi)[:-1]
+df1.iloc[:,1:] = df1.iloc[:,1:].apply(pd.to_numeric,errors='coerce')
+
 df1['Month1'] = pd.to_datetime(df1["Month"], dayfirst=True)
 last_date = df1['Month1'].max()
 df1['Month'] = df1['Month1']  + MonthEnd(0)
@@ -358,7 +360,7 @@ df1= df1.drop("Month1", axis=1)
 all_fpi_cols = list(df1.columns)[1:]
 df1['Financial Year'] = df1['Month'].apply(to_financial_year)            
 df1['Calendar Year'] = df1['Month'].dt.year 
-df1[all_fpi_cols] = pd.to_numeric(df1[all_fpi_cols], errors="coerce")
+
 text2 = None
 if param2=="USD":
     text2 = "(Amount in USD Million)"
