@@ -408,7 +408,7 @@ with col10:
         plot_bgcolor='white',
         height=500,
         yaxis=dict(
-        range=[1.15*min(y_values), 1.15*max(y_values)],
+        #range=[1.15*min(y_values), 1.15*max(y_values)],
         gridcolor='lightgray',
         zerolinecolor='lightgray',
         tickformat='.1f'),
