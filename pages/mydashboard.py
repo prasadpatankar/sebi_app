@@ -117,7 +117,7 @@ for x in df.columns:
     if x=="rank":
         df = df.drop(x, axis=1)  
 data = df.replace(np.nan,"")
-
+last_date_pm = df['Calender_Month'].max()
 
 categorical_cols = ['segment1','Type_Issue1','Sector']
 
@@ -202,6 +202,7 @@ with col15:
       margin=dict(r=50, l=50)
   )
   st.plotly_chart(fig_IPO)
+  st.write(f"Notes: data updated till {last_date_pm.strftime(format='%B %d, %Y')}")
   with st.expander("View &download data "):
       st.dataframe(summary_PM1)
 
