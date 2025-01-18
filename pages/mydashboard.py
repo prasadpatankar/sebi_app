@@ -320,7 +320,7 @@ with col10:
         zerolinecolor='lightgray',
         tickformat='.1f'),
         xaxis_title="",
-        margin=dict(r=50)
+        margin=dict(r=50, l=50)
         #yaxis_title="Amount"
         )
     st.plotly_chart(fig4, use_container_width=True)
@@ -377,7 +377,7 @@ with col11:
         st.dataframe(df2)
 
 
-# Main content
+##########################################################################################3
 st.title('Mutual Funds Section')
 
 # Create a 2x2 grid layout for visualizations
@@ -440,7 +440,7 @@ with col8:
           tickformat='.1f'
       ),
       xaxis_title="",
-      margin=dict(r=50)
+      margin=dict(r=50, l=50)
       #yaxis_title="Amount"
   )
   st.plotly_chart(fig_folios)
