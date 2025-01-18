@@ -193,7 +193,7 @@ with col15:
       plot_bgcolor='white',
       height=500,
       yaxis=dict(
-          range=[ 0,  max(summary_PM1['Issue_Size'])*1.07],  # Adjust based on data
+          range=[ 0,  max(summary_PM1['Issue_Size'])*1.15],  # Adjust based on data
           gridcolor='lightgray',
           zerolinecolor='lightgray',
           tickformat='.1f'
@@ -233,7 +233,7 @@ with col16:
       plot_bgcolor='white',
       height=500,
       yaxis=dict(
-          range=[ 0,  max(summary_PM1['No_Issues'])*1.07],  # Adjust based on data
+          range=[ 0,  max(summary_PM1['No_Issues'])*1.15],  # Adjust based on data
           gridcolor='lightgray',
           zerolinecolor='lightgray',
           tickformat='.1f'
