@@ -199,7 +199,7 @@ with col15:
           tickformat='.1f'
       ),
       xaxis_title="",
-      margin=dict(r=50)
+      margin=dict(r=50, l=50)
   )
   st.plotly_chart(fig_IPO)
   with st.expander("View &download data "):
