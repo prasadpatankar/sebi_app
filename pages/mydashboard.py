@@ -202,7 +202,7 @@ with col15:
       margin=dict(r=50, l=50)
   )
   st.plotly_chart(fig_IPO)
-  st.write(f"Notes: data updated till {last_date_pm.strftime(format='%B %d, %Y')}")
+  st.write(f"Notes: data updated till {last_date_pm}")
   with st.expander("View &download data "):
       st.dataframe(summary_PM1)
 
