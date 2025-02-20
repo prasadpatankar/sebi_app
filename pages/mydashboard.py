@@ -397,12 +397,12 @@ sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
 engine = create_engine(sql_query)
 query = f"SELECT * FROM {Table_Name}"
 df = pd.read_sql_query(query, engine).iloc[-12:]
-
+st.write(df.tail(2))
 #df = pd.read_csv(file_path_mf2).iloc[-12:]
 df['Net_AUM'] = df['Net_AUM'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
 df['No_Folios'] = df['No_Folios'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e7
 df['Month'] = pd.to_datetime(df['Month']).dt.strftime("%b %Y")
-
+st.write(df.Month(2))
 # Visualization 1: Bar Chart for Number of Orders by Quarter and Type
 with col8:
   # Standard title with formatting
