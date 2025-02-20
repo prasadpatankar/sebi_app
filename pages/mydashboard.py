@@ -402,7 +402,7 @@ st.write(df.tail(2))
 df['Net_AUM'] = df['Net_AUM'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
 df['No_Folios'] = df['No_Folios'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e7
 df['Month'] = pd.to_datetime(df['Month']).dt.strftime("%b %Y")
-st.write(df.Month(2))
+st.write(df.Month)
 # Visualization 1: Bar Chart for Number of Orders by Quarter and Type
 with col8:
   # Standard title with formatting
@@ -420,7 +420,7 @@ with col8:
           textfont=dict(color="royalblue", size=15)
       )
   )
-
+  st.write("aaa")
   # Update layout with similar properties
   fig_folios.update_layout(
       title={
@@ -444,6 +444,7 @@ with col8:
       margin=dict(r=50, l=50)
       #yaxis_title="Amount"
   )
+  st.write("bbb")
   st.plotly_chart(fig_folios)
 
 # Visualization 1: Bar Chart for Number of Orders by Quarter and Type
