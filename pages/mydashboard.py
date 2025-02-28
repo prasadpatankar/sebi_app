@@ -380,7 +380,6 @@ with col11:
 
 ##########################################################################################3
 st.title('Mutual Funds Section')
-from sqlalchemy import create_engine
 # Create a 2x2 grid layout for visualizations
 col8, col9 = st.columns(2)
 # Correct file path
@@ -396,11 +395,7 @@ user="avnadmin"
 sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
 engine = create_engine(sql_query)
 query = f"SELECT * FROM {Table_Name}"
-st.write("aaa")
-df = pd.read_sql_query(query, engine)
-st.write("bbb")
-df = df.iloc[-12:]
-st.write(df.head(2))
+df = pd.read_sql_query(query, engine).iloc[-12:]
 
 #df = pd.read_csv(file_path_mf2).iloc[-12:]
 df['Net_AUM'] = df['Net_AUM'].astype(str).str.replace(',', '', regex=False).apply(pd.to_numeric,errors='coerce')/ 1e5
