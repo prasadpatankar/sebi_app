@@ -397,7 +397,9 @@ sql_query = 'mysql+pymysql://'+user+':'+password+'@'+host+':'+port+'/'+db
 engine = create_engine(sql_query)
 query = f"SELECT * FROM {Table_Name}"
 st.write("aaa")
-df = pd.read_sql_query(query, engine).iloc[-12:]
+df = pd.read_sql_query(query, engine)
+st.write("bbb")
+df = df.iloc[-12:]
 st.write(df.head(2))
 
 #df = pd.read_csv(file_path_mf2).iloc[-12:]
