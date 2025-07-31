@@ -95,14 +95,67 @@ def to_financial_year(date):
 
   return financial_year
 
+def create_card_visual(title, value, label, indicator, ax):
+  # Hide the axes
+  ax.axis('off')
+  # Add the card title
+  ax.text(0.5, 0.85, title, ha='center', va='center', fontsize=10, weight='bold', color='#333333') # Dark grey title
+  # Add the main value
+  ax.text(0.5, 0.5, f"{value:,.0f}", ha='center', va='center', fontsize=20, weight='bold', color='#0078D4') # Blue main value, format with commas and no decimals
+  # Add the main value label
+  ax.text(0.5, 0.35, label, ha='center', va='center', fontsize=8, color='#555555') # Medium grey label
+  # Add the secondary indicator
+  # Determine color based on the sign of the indicator (assuming it's a string like "+5%" or "-2%")
+  indicator_color = '#D13438' if indicator.startswith('+') else '#107C10'  # Green for positive, Red for negative
+  ax.text(0.5, 0.15, indicator, ha='center', va='center', fontsize=8, color=indicator_color, weight='bold') # Bold secondary indicator
+  # Set a background color for the axes
+  #ax.set_facecolor('#F2F2F2') # Light grey background
+  # Optional: Add a subtle border around the axes
+  ax.patch.set_edgecolor('#CCCCCC')
+  # ax.patch.set_linewidth(1)
+
+
+
 #################################################
 # Main content
+
+#################################################
+st.title('Snapshot of Indian Securities Market')
+data_file_path = r"files/EQ_m_02.csv"
+dfy0 = pd.read_csv(data_file_path)
+dfy0['Month'] = pd.to_datetime(dfy0['Month'])
+dfy0 = dfy0.sort_values(by="Month")
+dfy0['End_of_Month'] = dfy0['Month'].dt.to_period('M')#.dt.to_timestamp('M', 'end')
+dfy0['Turnover'] = dfy0.groupby(['End_of_Month'])[['ADT_Crore']].transform('sum')
+dfy1 = dfy0.loc[dfy0['Exchange']=="BSE"]
+dfy2 = dfy1[['Companies_Listed','Turnover','Market_Cap_in_Crore','Sensex_Nifty_Close']].iloc[[-13,-1],:]
+dfy2['Market_Cap_in_Crore'] = dfy2['Market_Cap_in_Crore']/1e5
+dfy2['Turnover'] = dfy2['Turnover']/1e2
+dfy2.columns = ["Listed Companies", "Daily Turnover", "Market Capitalisation", "Sensex Index"]
+dfy2 = dfy2[["Market Capitalisation", "Listed Companies", "Avg Daily Turnover", "Sensex Index"]]
+dfy2 = dfy2.reset_index(drop=True)
+dfy2a = dfy2.pct_change()
+
+percentage_value = round(dfy2a.iloc[-1] * 100, 1).to_frame("indicator")
+percentage_value['indicator'] = percentage_value['indicator'].astype('str')+'% YoY'
+percentage_value['value'] = round(dfy2.iloc[-1],1)
+percentage_value['label'] = ['Rs Trillion','Number','Rs Billion','Index']
+percentage_value = percentage_value.reset_index()
+
+# Create a figure with 4 subplots in one row
+fig, axes = plt.subplots(1, 4, figsize=(10, 1.5)) # Adjust figsize as needed
+for i, row in percentage_value.iterrows():
+    create_card_visual(row['index'], row['value'], row['label'], row['indicator'], axes[i])
+plt.tight_layout(w_pad=5) # w_pad controls the width padding between subplots
+st.pyplot(fig)
+st.write(f"Updated as of {dfy0['End_of_Month'].iloc[-1] }")
+
+
+
 st.title('Primary Market Section')
 
 param8_options = ['Month', 'Calendar Year', 'Financial Year']
 param8 = st.radio('Select Time Period', param8_options, index=0)
-
-
 # --- Get Table ID ---
 table_id = "PM_m_08"
 filepath = r"files/PM_m_08.csv"
