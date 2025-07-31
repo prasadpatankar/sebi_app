@@ -149,7 +149,7 @@ for i, row in percentage_value.iterrows():
     create_card_visual(row['index'], row['value'], row['label'], row['indicator'], axes[i])
 plt.tight_layout(w_pad=5) # w_pad controls the width padding between subplots
 st.pyplot(fig)
-st.write(f"Updated as of {dfy0['End_of_Month'].iloc[-1] }")
+st.write(f"Updated as of {dfy0['Month'].iloc[-1].strftime("%d %B %Y") }")
 
 
 
