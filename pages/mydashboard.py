@@ -133,7 +133,7 @@ dfy2 = dfy1[['Companies_Listed','Turnover','Market_Cap_in_Crore','Sensex_Nifty_C
 dfy2['Market_Cap_in_Crore'] = dfy2['Market_Cap_in_Crore']/1e5
 dfy2['Turnover'] = dfy2['Turnover']/1e2
 dfy2.columns = ["Listed Companies", "Daily Turnover", "Market Capitalisation", "Sensex Index"]
-dfy2 = dfy2[["Market Capitalisation", "Listed Companies", "Avg Daily Turnover", "Sensex Index"]]
+dfy2 = dfy2[["Market Capitalisation", "Listed Companies", "Daily Turnover", "Sensex Index"]]
 dfy2 = dfy2.reset_index(drop=True)
 dfy2a = dfy2.pct_change()
 
